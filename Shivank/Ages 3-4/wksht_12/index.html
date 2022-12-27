@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/konva@8.3.14/konva.min.js"></script>
     <meta charset="UTF-8" />
     <title>1</title>
     <link
@@ -11,6 +12,9 @@
     />
     <style>
       body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
         background-color: #ece0e9;
         text-align: center;
       }
@@ -18,23 +22,46 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Colour the following shapes.</h1>
+    <h1>Colour the following shapes.</h1>
 
-      <div class="m-5">
-        <h2>CIRCLE</h2>
-      </div>
-
-      <div class="p-5">
-        <h2>SQUARE</h2>
-      </div>
-
-      <div class="p-5">
-        <h2>TRIANGLE</h2>
-      </div>
+    <div class="m-5">
+      <h2>CIRCLE</h2>
     </div>
 
-    <script></script>
+    <div class="p-5">
+      <h2>SQUARE</h2>
+    </div>
+
+    <div class="p-5">
+      <h2>TRIANGLE</h2>
+      <div id="circle"></div>
+    </div>
+
+    <script>
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      var stage = new Konva.Stage({
+        container: "circle",
+        width: width,
+        height: height,
+      });
+
+      var layer = new Konva.Layer();
+
+      var square = new Konva.Rect({
+        x: 10,
+        y: 10,
+        width: 100,
+        height: 100,
+        stroke: "black",
+        strokeWidth: 4,
+      });
+      layer.add(square);
+
+      // add the layer to the stage
+      stage.add(layer);
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
