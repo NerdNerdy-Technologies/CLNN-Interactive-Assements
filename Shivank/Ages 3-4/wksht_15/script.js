@@ -2,7 +2,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 var totalImages = 0;
 function loadImages(sources, callback) {
-  var assetDir = "/Shivank/Ages 3-4/assets/images/11/";
+  var assetDir = "/Shivank/Ages 3-4/assets/images/15/";
   var images = {};
   var loadedImages = 0;
   var numImages = 0;
@@ -62,16 +62,28 @@ function initStage(images) {
 
   var animals = {
     one_3_black: {
-      x: 1200,
-      y: 500,
+      x: 300,
+      y: 470,
     },
     two_1_black: {
-      x: 1200,
-      y: 500,
+      x: 300,
+      y: 470,
     },
-    three_2_black: {
-      x: 1200,
-      y: 500,
+    one_2_black: {
+      x: 600,
+      y: 470,
+    },
+    two_2_black: {
+      x: 600,
+      y: 470,
+    },
+    one_1_black: {
+      x: 900,
+      y: 470,
+    },
+    two_3_black: {
+      x: 900,
+      y: 470,
     },
   };
 
@@ -100,18 +112,6 @@ function initStage(images) {
       x: 900,
       y: 250,
     },
-    three_1: {
-      x: 300,
-      y: 470,
-    },
-    three_2: {
-      x: 600,
-      y: 470,
-    },
-    three_3: {
-      x: 900,
-      y: 470,
-    },
   };
 
   // create draggable animals
@@ -126,8 +126,8 @@ function initStage(images) {
         x: anim.x,
         y: anim.y,
         draggable: true, //to make the image draggable
-        height: 200,
-        width: 200,
+        height: 150,
+        width: 150,
       });
 
       //console.log("draggable animal list is",animal)
@@ -148,7 +148,7 @@ function initStage(images) {
             y: outline.y,
           });
           animal.inRightPlace = true;
-          if (++score >= 4) {
+          if (++score >= 7) {
             var text = `You win! Your score is: ` + score;
             drawBackground(background, images.beach, text);
           }
@@ -213,11 +213,11 @@ var sources = {
   two_1: "2-1.png",
   two_2: "2-2.png",
   two_3: "2-3.png",
-  three_1: "3-1.png",
-  three_2: "3-2.png",
-  three_3: "3-3.png",
-  one_3_black: "dry-clean.png",
-  two_1_black: "dry-clean.png",
-  three_2_black: "dry-clean.png",
+  one_3_black: "1.png",
+  two_1_black: "1.png",
+  one_2_black: "2.png",
+  two_2_black: "2.png",
+  one_1_black: "3.png",
+  two_3_black: "3.png",
 };
 loadImages(sources, initStage);
