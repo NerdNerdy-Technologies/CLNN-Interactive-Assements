@@ -69,7 +69,7 @@ function initStage(images) {
       x: 1200,
       y: 500,
     },
-    three_2_black: {
+    three_1_black: {
       x: 1200,
       y: 500,
     },
@@ -218,6 +218,6 @@ var sources = {
   three_3: "3-3.png",
   one_3_black: "dry-clean.png",
   two_1_black: "dry-clean.png",
-  three_2_black: "dry-clean.png",
+  three_1_black: "dry-clean.png",
 };
 loadImages(sources, initStage);

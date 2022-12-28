@@ -2,7 +2,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 var totalImages = 0;
 function loadImages(sources, callback) {
-  var assetDir = "/Shivank/Ages 3-4/assets/images/11/";
+  var assetDir = "/Shivank/Ages 3-4/assets/images/35/";
   var images = {};
   var loadedImages = 0;
   var numImages = 0;
@@ -61,56 +61,56 @@ function initStage(images) {
   // image positions
 
   var animals = {
-    one_3_black: {
+    cloud_black: {
       x: 1200,
       y: 500,
     },
-    two_1_black: {
+    sun_black: {
       x: 1200,
       y: 500,
     },
-    three_2_black: {
+    moon_black: {
+      x: 1200,
+      y: 500,
+    },
+    stars_black: {
+      x: 1200,
+      y: 500,
+    },
+    bottle_black: {
       x: 1200,
       y: 500,
     },
   };
 
   var outlines = {
-    one_1: {
-      x: 300,
+    cloud: {
+      x: 200,
       y: 30,
     },
-    one_2: {
-      x: 600,
+    stars: {
+      x: 500,
       y: 30,
     },
-    one_3: {
-      x: 900,
+    sun: {
+      x: 800,
       y: 30,
     },
-    two_1: {
-      x: 300,
+    bolt: {
+      x: 200,
       y: 250,
     },
-    two_2: {
-      x: 600,
+    moon: {
+      x: 500,
       y: 250,
     },
-    two_3: {
-      x: 900,
+    raincloud: {
+      x: 800,
       y: 250,
     },
-    three_1: {
-      x: 300,
-      y: 470,
-    },
-    three_2: {
-      x: 600,
-      y: 470,
-    },
-    three_3: {
-      x: 900,
-      y: 470,
+    bottle: {
+      x: 1100,
+      y: 250,
     },
   };
 
@@ -148,7 +148,7 @@ function initStage(images) {
             y: outline.y,
           });
           animal.inRightPlace = true;
-          if (++score >= 4) {
+          if (++score >= 6) {
             var text = `You win! Your score is: ` + score;
             drawBackground(background, images.beach, text);
           }
@@ -207,17 +207,17 @@ function initStage(images) {
 }
 
 var sources = {
-  one_1: "1-1.png",
-  one_2: "1-2.png",
-  one_3: "1-3.png",
-  two_1: "2-1.png",
-  two_2: "2-2.png",
-  two_3: "2-3.png",
-  three_1: "3-1.png",
-  three_2: "3-2.png",
-  three_3: "3-3.png",
-  one_3_black: "dry-clean.png",
-  two_1_black: "dry-clean.png",
-  three_2_black: "dry-clean.png",
+  bottle: "bottle.png",
+  cloud: "cloud.png",
+  moon: "moon.png",
+  raincloud: "raincloud.png",
+  stars: "stars.png",
+  sun: "sun.png",
+  bolt: "bolt.png",
+  cloud_black: "dry-clean.png",
+  sun_black: "dry-clean.png",
+  moon_black: "dry-clean.png",
+  stars_black: "dry-clean.png",
+  bottle_black: "dry-clean.png",
 };
 loadImages(sources, initStage);

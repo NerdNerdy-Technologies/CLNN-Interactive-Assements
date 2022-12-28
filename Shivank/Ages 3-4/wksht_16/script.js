@@ -2,7 +2,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 var totalImages = 0;
 function loadImages(sources, callback) {
-  var assetDir = "/Shivank/Ages 3-4/assets/images/11/";
+  var assetDir = "/Shivank/Ages 3-4/assets/images/16/";
   var images = {};
   var loadedImages = 0;
   var numImages = 0;
@@ -61,11 +61,11 @@ function initStage(images) {
   // image positions
 
   var animals = {
-    one_3_black: {
+    one_1_black: {
       x: 1200,
       y: 500,
     },
-    two_1_black: {
+    two_3_black: {
       x: 1200,
       y: 500,
     },
@@ -216,8 +216,8 @@ var sources = {
   three_1: "3-1.png",
   three_2: "3-2.png",
   three_3: "3-3.png",
-  one_3_black: "dry-clean.png",
-  two_1_black: "dry-clean.png",
+  one_1_black: "dry-clean.png",
+  two_3_black: "dry-clean.png",
   three_2_black: "dry-clean.png",
 };
 loadImages(sources, initStage);
