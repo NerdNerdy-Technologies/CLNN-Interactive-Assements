@@ -104,7 +104,7 @@
               image: images[key],
               x: anim.x,
               y: anim.y,
-              width:200,
+              width:150,
               height:150,
               draggable: true, //to make the image draggable
             });
@@ -126,13 +126,13 @@
 
 
                 animal.position({
-                  x: outline.x-25,
-                  y: outline.y-50,
+                  x: outline.x-5,
+                  y: outline.y-60,
                 });
                 if(privKey=="fruit5"){
                 animal.position({
-                  x: outline.x+15,
-                  y: outline.y-120,
+                  x: outline.x-1,
+                  y: outline.y-170,
                 });
                 }
 /*                if(score==0){
@@ -141,7 +141,7 @@
 
                 console.log("Score is ",score)
                 animal.inRightPlace = true;
-                if (++score >= 10) {
+                if (++score >= 2) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                 }
@@ -211,16 +211,16 @@
 
       var sources = {
         beach:'beach.png',
-        fruit1:"hat.png",
-        fruit2:"snow3.png",
-        fruit3:"tree.png",
-        fruit4:"triangle.png",
-        fruit5:"cherry2.png",
+        fruit1:"2-2.png",
+        fruit2:"ice4.png",
+        fruit3:"2-1.png",
+        fruit4:"1-1.png",
+        fruit5:"cherry22.png",
         veg1:"bellpepper.png",
         veg2:"carrot.png",
         veg3:"eggplant.png",
         veg4:"broccoli.png",
         veg5:"garlics.png",
-        fruit_basket:"icecreamcone.png",
+        fruit_basket:"1-2.png",
       };
       loadImages(sources, initStage);

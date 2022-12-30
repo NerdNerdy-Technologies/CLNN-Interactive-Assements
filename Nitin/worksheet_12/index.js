@@ -64,43 +64,43 @@
         var animals = {   
           cat1text1: {
             x: 280,
-            y: 180,
+            y: 150,
           },
           cat3text3: {
             x: 370,
-            y: 180,
+            y: 150,
           },
           cat2text2: {
             x: 470,
-            y: 180,
+            y: 150,
           },
           mug2text2: {
             x: 320,
-            y: 350,
+            y: 380,
           },
           mug1text1: {
             x: 420,
-            y: 350,
+            y: 380,
           },
           mug3text3: {
             x: 520,
-            y: 350,
+            y: 380,
           },
           book1text1: {
             x: 380,
-            y: 570,
+            y: 600,
           },
           book4text4: {
             x: 480,
-            y: 570,
+            y: 600,
           },
           book3text3: {
             x: 570,
-            y: 570,
+            y: 600,
           },
           book2text2: {
             x: 660,
-            y: 570,
+            y: 600,
           },
         };
 
@@ -119,15 +119,15 @@
           },
           cat1_black: {
             x: 200,
-            y: 50,
+            y: 0,
           },
           cat2_black: {
             x: 380,
-            y: 50,
+            y: 0,
           },
           cat3_black: {
             x: 550,
-            y: 50,
+            y: 0,
           },
           mug1_black: {
             x: 200,
@@ -174,8 +174,8 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:35,
-              width:80,
+              height:30,
+              width:35,
             });
 
             animal.on('dragstart', function () {

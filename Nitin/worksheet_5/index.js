@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -64,54 +64,54 @@
         // image positions
         var animals = {   
           ontext: {
-            x: 500,
+            x: 900,
             y: 50,
           },
           righttext: {
-            x: 500,
+            x: 900,
             y: 100,
           },
           undertext: {
-            x: 500,
+            x: 900,
             y: 150,
           },
-          insidetext: {
-            x: 500,
+          behindtext: {
+            x: 900,
             y: 200,
           },
         };
 
         var outlines = {
           on: {
-            x: 10,
+            x: 200,
             y: 50,
           },
           under: {
-            x: 250,
+            x: 550,
             y: 50,
           },
-          inside: {
-            x: 10,
+          behind: {
+            x: 200,
             y: 350,
           },
           right: {
-            x: 250,
+            x: 550,
             y: 350,
           },
           on_black: {
-            x: 10,
+            x: 200,
             y: 160,
           },
           under_black: {
-            x: 250,
+            x: 550,
             y: 160,
           },
-          inside_black: {
-            x: 10,
+          behind_black: {
+            x: 200,
             y: 460,
           },
           right_black: {
-            x: 250,
+            x: 550,
             y: 460,
           },
         };
@@ -224,16 +224,16 @@
 
       var sources = {
         beach:'candy.png',
-        on:"ontable.jpg",
-        inside:"inside.jpg",
-        right:"right.png",
-        under:"under.png",
+        on:"1.png",
+        behind:"3.png",
+        right:"4.png",
+        under:"2.png",
         ontext:"ontext.png",
         undertext:"undertext.png",
-        insidetext:"insidetext.png",
+        behindtext:"behindtext.png",
         righttext:"righttext.png",
         on_black: 'square_1.png',
-        inside_black: 'square_2.png',
+        behind_black: 'square_2.png',
         under_black: 'square_3.png',
         right_black: 'square_4.png',
       };

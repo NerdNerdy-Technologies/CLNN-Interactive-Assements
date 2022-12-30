@@ -35,7 +35,7 @@
           return false;
         }
 
-        if (ax > o.x - 20 && ax < o.x + 100 && ay > o.y - 20 && ay < o.y + 20) {
+        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
           return true;
         } else {
           return false;
@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -64,43 +64,43 @@
         // image positions
         var animals = {   
           morningtext: {
-            x: 400,
-            y: 350,
+            x: 700,
+            y: 100,
           },
           noontext: {
-            x: 400,
-            y: 50,
+            x: 700,
+            y: 150,
           },
           nighttext: {
-            x: 400,
+            x: 700,
             y: 200,
           },
         };
 
         var outlines = {
           morning: {
-            x: 10,
+            x: 300,
             y: 50,
           },
           noon: {
-            x: 10,
-            y: 200,
+            x: 300,
+            y: 250,
           },
           night: {
-            x: 10,
-            y: 350,
+            x: 300,
+            y: 450,
           },
           morning_black: {
-            x: 200,
+            x: 500,
             y: 50,
           },
           noon_black: {
-            x: 200,
-            y: 200,
+            x: 500,
+            y: 250,
           },
           night_black: {
-            x: 200,
-            y: 350,
+            x: 500,
+            y: 450,
           },
         };
 
@@ -117,7 +117,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:80,
+              height:25,
               width:80,
             });
 
@@ -137,7 +137,7 @@
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
                   x: outline.x+30,
-                  y: outline.y+10,
+                  y: outline.y+60,
                 });
                 animal.inRightPlace = true;
                 if (++score >= 3) {
@@ -191,7 +191,7 @@
               x: out.x,
               y: out.y,
               width:150,
-              height:100,
+              height:150,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -218,8 +218,8 @@
         morningtext:"morningtext.png",
         noontext:"noontext.png",
         nighttext:"nighttext.png",
-        morning_black: 'square_1.png',
+        morning_black: 'square_2.png',
         noon_black: 'square_2.png',
-        night_black: 'square_3.png',
+        night_black: 'square_2.png',
       };
       loadImages(sources, initStage);
