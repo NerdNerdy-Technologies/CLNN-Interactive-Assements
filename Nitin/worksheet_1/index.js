@@ -35,7 +35,7 @@
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
+        if (ax > o.x - 100 && ax < o.x + 200 && ay > o.y - 100 && ay < o.y + 200) {
           return true;
         } else {
           return false;
@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        context.drawImage(beachImg, 0, 0);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -53,7 +53,7 @@
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 1000,
+          width: 2000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -62,84 +62,45 @@
         var score = 0;
 
         // image positions
-        var animals = {   
-          cherrytext: {
-            x: 600,
-            y: 150,
+        var animals = {
+          one: {
+            x: 10,
+            y: 50,
           },
-          buckettext: {
-            x: 600,
+          eight: {
+            x: 10,
             y: 200,
           },
-          dogtext: {
-            x: 600,
-            y: 250,
-          },
-          text_1: {
-            x: 600,
-            y: 300,
-          },
-          text_2: {
-            x: 600,
+          seventysix: {
+            x: 10,
             y: 350,
           },
-          text_3: {
-            x: 600,
-            y: 400,
+          five: {
+            x: 400,
+            y: 50,
+          },
+          nineteen: {
+            x: 400,
+            y: 200,
+          },
+          ninetyfive: {
+            x: 400,
+            y: 350,
           },
         };
 
         var outlines = {
-          cherry: {
-            x: 10,
-            y: 10,
+          five_black: {
+            x: 200,
+            y: 50,
           },
-          dog: {
-            x: 10,
-            y: 250,
+          nineteen_black: {
+            x: 200,
+            y: 200,
           },
-          bucket: {
-            x: 10,
-            y: 480,
-          },
-          cherries: {
-            x: 300,
-            y: 10,
-          },
-          dogs: {
-            x: 300,
-            y: 250,
-          },
-          buckets: {
-            x: 300,
-            y: 480,
-          },
-          cherry_black: {
-            x: 320,
-            y: 120,
-          },
-          dog_black: {
-            x: 320,
+          ninetyfive_black: {
+            x: 200,
             y: 350,
-          },
-          bucket_black: {
-            x: 320,
-            y: 580,
-          },
-        };
-
-        var headings = {
-          cherryhead: {
-            x: 40,
-            y: 180,
-          },
-          doghead: {
-            x: 40,
-            y: 420,
-          },
-          buckethead: {
-            x: 50,
-            y: 650,
           },
         };
 
@@ -156,7 +117,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:35,
+              height:80,
               width:80,
             });
 
@@ -170,19 +131,17 @@
              * snap into place if it is
              */
             animal.on('dragend', function () {
-              console.log("key is",privKey)
-              var outline = outlines[privKey.slice(0,-4) + '_black'];
+              var outline = outlines[privKey + '_black'];
               //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
-                  x: outline.x+30,
-                  y: outline.y+60,
+                  x: outline.x,
+                  y: outline.y,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
+                if (++score >= 3) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
-                  //animals.destroy();
                 }
 
                 // disable drag and drop
@@ -229,9 +188,8 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:150,
-              height:150,
-              //opacity: 0.2,
+              width:100,
+              height:100,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -239,29 +197,6 @@
             animalLayer.add(outline);
           })();
         }
-
-        //for headings
-        for (var key in headings) {
-          // anonymous function to induce scope
-          (function () {
-            var imageObj = images[key];
-            var out = headings[key];
-
-            var heading = new Konva.Image({
-              image: imageObj,
-              x: out.x,
-              y: out.y,
-              width:100,
-              height:30,
-              stroke:"green",
-              strokeWidth:3
-            });
-
-            animalLayer.add(heading);
-          })();
-        }
-
-        //-----------------
 
         stage.add(background);
         stage.add(animalLayer);
@@ -274,24 +209,15 @@
       }
 
       var sources = {
-        beach:'candy.png',
-        cherry:"cherry.png",
-        dog:"dog.png",
-        bucket:"bucket.png",
-        cherries:"cherries.png",
-        dogs:"dogs.png",
-        buckets:"buckets.png",
-        cherryhead:"cherryhead.png",
-        doghead:"doghead.png",
-        buckethead:"buckethead.png",
-        cherrytext:"cherrytext.png",
-        text_1:"text_3.png",
-        text_2:"text_4.png",
-        text_3:"text_5.png",
-        dogtext:"dogtext.png",
-        buckettext:"buckettext.png",
-        cherry_black: 'square_1.png',
-        dog_black: 'square_1.png',
-        bucket_black: 'square_1.png',
+        beach:'beach.jpg',
+        one:"one.png",
+        five:"five.png",
+        eight:"eight.png",
+        nineteen:"nineteen.png",
+        seventysix:"seventysix.png",
+        ninetyfive:"ninetyfive.png",
+        five_black: 'square_1.png',
+        nineteen_black: 'square_2.png',
+        ninetyfive_black: 'square_3.png',
       };
       loadImages(sources, initStage);

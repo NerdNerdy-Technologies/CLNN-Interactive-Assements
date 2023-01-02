@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -63,64 +63,44 @@
 
         // image positions
         var animals = {   
-          moontext: {
-            x: 500,
-            y: 50,
-          },
-          suntext: {
-            x: 500,
+          morningtext: {
+            x: 700,
             y: 100,
           },
-          fishtext: {
-            x: 500,
+          noontext: {
+            x: 700,
             y: 150,
           },
-          walktext: {
-            x: 500,
+          nighttext: {
+            x: 700,
             y: 200,
-          },
-          cattext: {
-            x: 500,
-            y: 250,
-          },
-          dogtext: {
-            x: 500,
-            y: 300,
           },
         };
 
         var outlines = {
-          walk: {
-            x: 10,
+          morning: {
+            x: 300,
             y: 50,
           },
-          dog: {
-            x: 250,
+          noon: {
+            x: 300,
+            y: 250,
+          },
+          night: {
+            x: 300,
+            y: 450,
+          },
+          morning_black: {
+            x: 500,
             y: 50,
           },
-          moon: {
-            x: 10,
-            y: 350,
+          noon_black: {
+            x: 500,
+            y: 250,
           },
-          fish: {
-            x: 250,
-            y: 350,
-          },
-          walk_black: {
-            x: 10,
-            y: 160,
-          },
-          dog_black: {
-            x: 250,
-            y: 160,
-          },
-          moon_black: {
-            x: 10,
-            y: 460,
-          },
-          fish_black: {
-            x: 250,
-            y: 460,
+          night_black: {
+            x: 500,
+            y: 450,
           },
         };
 
@@ -137,7 +117,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:35,
+              height:25,
               width:80,
             });
 
@@ -160,7 +140,7 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
+                if (++score >= 3) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
@@ -232,19 +212,14 @@
 
       var sources = {
         beach:'candy.png',
-        walk:"walk.png",
-        dog:"dog.png",
-        moon:"moon.png",
-        fish:"fish.png",
-        walktext:"walktext.png",
-        moontext:"moontext.png",
-        suntext:"suntext.png",
-        cattext:"cattext.png",
-        dogtext:"dogtext.png",
-        fishtext:"fishtext.png",
-        walk_black: 'square_1.png',
-        dog_black: 'square_1.png',
-        moon_black: 'square_1.png',
-        fish_black: 'square_1.png',
+        morning:"morning.jpeg",
+        noon:"noon.jpg",
+        night:"night.jpg",
+        morningtext:"morningtext.png",
+        noontext:"noontext.png",
+        nighttext:"nighttext.png",
+        morning_black: 'square_2.png',
+        noon_black: 'square_2.png',
+        night_black: 'square_2.png',
       };
       loadImages(sources, initStage);

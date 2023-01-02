@@ -29,11 +29,13 @@
         var o = outline;
         var ax = a.x();
         var ay = a.y();
+
+        console.log("Animal is",animal,"outline is,",outline)
         if(outline==undefined){
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 200 && ay > o.y - 100 && ay < o.y + 200) {
+        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
           return true;
         } else {
           return false;
@@ -41,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 0, 0);
+        context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -51,7 +53,7 @@
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 2000,
+          width: 1000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -60,49 +62,84 @@
         var score = 0;
 
         // image positions
-        var outlines = {
-          book: {
-            x: 10,
-            y: 50,
+        var animals = {   
+          cherrytext: {
+            x: 600,
+            y: 150,
           },
-          wire: {
-            x: 10,
+          buckettext: {
+            x: 600,
             y: 200,
           },
-          wreck: {
-            x: 10,
+          dogtext: {
+            x: 600,
+            y: 250,
+          },
+          text_1: {
+            x: 600,
+            y: 300,
+          },
+          text_2: {
+            x: 600,
             y: 350,
           },
-          fire: {
-            x: 400,
-            y: 50,
-          },
-          knife: {
-            x: 400,
-            y: 200,
-          },
-          clipboard: {
-            x: 400,
-            y: 350,
+          text_3: {
+            x: 600,
+            y: 400,
           },
         };
 
-        var animals = {
-          knife_black: {
-            x: 200,
-            y: 50,
+        var outlines = {
+          cherry: {
+            x: 10,
+            y: 10,
           },
-          wreck_black: {
-            x: 200,
-            y: 50,
+          dog: {
+            x: 10,
+            y: 250,
           },
-          fire_black: {
-            x: 200,
-            y: 50,
+          bucket: {
+            x: 10,
+            y: 480,
           },
-          wire_black: {
-            x: 200,
-            y: 50,
+          cherries: {
+            x: 300,
+            y: 10,
+          },
+          dogs: {
+            x: 300,
+            y: 250,
+          },
+          buckets: {
+            x: 300,
+            y: 480,
+          },
+          cherry_black: {
+            x: 320,
+            y: 120,
+          },
+          dog_black: {
+            x: 320,
+            y: 350,
+          },
+          bucket_black: {
+            x: 320,
+            y: 580,
+          },
+        };
+
+        var headings = {
+          cherryhead: {
+            x: 40,
+            y: 180,
+          },
+          doghead: {
+            x: 40,
+            y: 420,
+          },
+          buckethead: {
+            x: 50,
+            y: 650,
           },
         };
 
@@ -119,7 +156,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:80,
+              height:35,
               width:80,
             });
 
@@ -133,17 +170,19 @@
              * snap into place if it is
              */
             animal.on('dragend', function () {
-              var outline = outlines[privKey.slice(0,-6)];
+              console.log("key is",privKey)
+              var outline = outlines[privKey.slice(0,-4) + '_black'];
               //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
-                  x: outline.x,
-                  y: outline.y,
+                  x: outline.x+30,
+                  y: outline.y+60,
                 });
                 animal.inRightPlace = true;
                 if (++score >= 4) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
+                  //animals.destroy();
                 }
 
                 // disable drag and drop
@@ -190,8 +229,9 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:100,
-              height:100,
+              width:150,
+              height:150,
+              //opacity: 0.2,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -199,6 +239,29 @@
             animalLayer.add(outline);
           })();
         }
+
+        //for headings
+        for (var key in headings) {
+          // anonymous function to induce scope
+          (function () {
+            var imageObj = images[key];
+            var out = headings[key];
+
+            var heading = new Konva.Image({
+              image: imageObj,
+              x: out.x,
+              y: out.y,
+              width:100,
+              height:30,
+              stroke:"green",
+              strokeWidth:3
+            });
+
+            animalLayer.add(heading);
+          })();
+        }
+
+        //-----------------
 
         stage.add(background);
         stage.add(animalLayer);
@@ -212,17 +275,23 @@
 
       var sources = {
         beach:'candy.png',
-        book:"book.png",
-        knife:"knife.png",
-        fire:"fire.png",
-        wreck:"wreck.png",
-        wire:"wire.png",
-        mug:"mug.png",
-        clipboard:"clipboard.png",
-        knife_black: 'cross.png',
-        fire_black: 'cross.png',
-        wire_black: 'cross.png',
-        wreck_black: 'cross.png',
-        nineteen_black: 'cross.png',
+        cherry:"cherry.png",
+        dog:"dog.png",
+        bucket:"bucket.png",
+        cherries:"cherries.png",
+        dogs:"dogs.png",
+        buckets:"buckets.png",
+        cherryhead:"cherryhead.png",
+        doghead:"doghead.png",
+        buckethead:"buckethead.png",
+        cherrytext:"cherrytext.png",
+        text_1:"text_3.png",
+        text_2:"text_4.png",
+        text_3:"text_5.png",
+        dogtext:"dogtext.png",
+        buckettext:"buckettext.png",
+        cherry_black: 'square_1.png',
+        dog_black: 'square_1.png',
+        bucket_black: 'square_1.png',
       };
       loadImages(sources, initStage);

@@ -34,7 +34,7 @@
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 500 && ay < o.y + 100) {
+        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
           return true;
         } else {
           return false;
@@ -42,17 +42,17 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        //context.drawImage(beachImg, 0, 0);
+        context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
         context.fillText(text, background.getStage().width() / 2, 40);
       }
- 
+
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 2000,
+          width: 1000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -61,96 +61,148 @@
         var score = 0;
 
         // image positions
-        var animals = {
-          fruit1: {
-            x: 0,
-            y: 50,
+        var animals = {   
+          cat1text1: {
+            x: 280,
+            y: 150,
           },
-          fruit2: {
-            x: 0,
-            y: 250,
+          cat3text3: {
+            x: 370,
+            y: 150,
           },
-          fruit3: {
-            x: 0,
-            y: 450,
+          cat2text2: {
+            x: 470,
+            y: 150,
           },
-          fruit5: {
-            x: 250,
-            y: 100,
+          mug2text2: {
+            x: 320,
+            y: 380,
           },
-          fruit4: {
-            x: 250,
-            y: 350,
+          mug1text1: {
+            x: 420,
+            y: 380,
+          },
+          mug3text3: {
+            x: 520,
+            y: 380,
+          },
+          book1text1: {
+            x: 380,
+            y: 600,
+          },
+          book4text4: {
+            x: 480,
+            y: 600,
+          },
+          book3text3: {
+            x: 570,
+            y: 600,
+          },
+          book2text2: {
+            x: 660,
+            y: 600,
           },
         };
 
         var outlines = {
-          fruit_basket: {
-            x: 550,
-            y: 300,
+          cat: {
+            x: 10,
+            y: 10,
           },
+          mug: {
+            x: 10,
+            y: 250,
+          },
+          book: {
+            x: 10,
+            y: 480,
+          },
+          cat1_black: {
+            x: 200,
+            y: 0,
+          },
+          cat2_black: {
+            x: 380,
+            y: 0,
+          },
+          cat3_black: {
+            x: 550,
+            y: 0,
+          },
+          mug1_black: {
+            x: 200,
+            y: 220,
+          },
+          mug2_black: {
+            x: 380,
+            y: 220,
+          },
+          mug3_black: {
+            x: 550,
+            y: 220,
+          },
+          book1_black: {
+            x: 200,
+            y: 450,
+          },
+          book2_black: {
+            x: 380,
+            y: 450,
+          },
+          book3_black: {
+            x: 550,
+            y: 450,
+          },
+          book4_black: {
+            x: 730,
+            y: 450,
+          }
         };
 
-      
-        // create draggable animals
-        for (var key in animals) {
+
+
+        //---------------- create draggable animals
+        for (var key in animals) {  
           // anonymous function to induce scope
           (function () {
             //key will be members of animals object like; monkey, bear
             var privKey = key;
+            console.log("key is",key)
             var anim = animals[key];
-
             var animal = new Konva.Image({
               image: images[key],
               x: anim.x,
               y: anim.y,
-              width:150,
-              height:150,
               draggable: true, //to make the image draggable
+              height:30,
+              width:35,
             });
-
-
 
             animal.on('dragstart', function () {
               this.moveToTop();
             });
-
             /*
              * check if animal is in the right spot and
              * snap into place if it is
              */
-               var add=0;
+             //for cat
             animal.on('dragend', function () {
-              var outline = outlines[privKey.slice(0,-1) + '_basket'];
+              var outline = outlines[privKey.slice(0,-5) + '_black'];
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
-
-
                 animal.position({
-                  x: outline.x-5,
-                  y: outline.y-60,
-                });
-                if(privKey=="fruit5"){
-                animal.position({
-                  x: outline.x-1,
-                  y: outline.y-170,
-                });
-                }
-/*                if(score==0){
-                  add=add-10;
-                }*/
-
-                console.log("Score is ",score)
+                  x: outline.x+30,
+                  y: outline.y+60,
+                });   
                 animal.inRightPlace = true;
-                if (++score >= 2) {
+                if (++score >= 14) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
+                  //animals.destroy();
                 }
-
                 // disable drag and drop
                 setTimeout(function () {
                   animal.draggable(false);
                 }, 50);
-                
               }else{
                   animal.position({
                   x: anim.x,
@@ -159,11 +211,7 @@
                 }); 
               }
             }); 
-            // make animal glow on mouseover
-/*            animal.on('mouseover', function () {
-              animal.image(images[privKey + '_glow']);
-              document.body.style.cursor = 'pointer';
-            });*/
+
 
             // return animal on mouseout
             animal.on('mouseout', function () {
@@ -172,6 +220,10 @@
             });
 
             animal.on('dragmove', function () {
+              document.body.style.cursor = 'pointer';
+            });
+
+             animal.on('mouseover', function () {
               document.body.style.cursor = 'pointer';
             });
 
@@ -192,12 +244,15 @@
               x: out.x,
               y: out.y,
               width:150,
-              height:300,
+              height:150,
             });
 
             animalLayer.add(outline);
           })();
         }
+
+
+        //-----------------
 
         stage.add(background);
         stage.add(animalLayer);
@@ -210,17 +265,30 @@
       }
 
       var sources = {
-        beach:'beach.png',
-        fruit1:"2-2.png",
-        fruit2:"ice4.png",
-        fruit3:"2-1.png",
-        fruit4:"1-1.png",
-        fruit5:"cherry22.png",
-        veg1:"bellpepper.png",
-        veg2:"carrot.png",
-        veg3:"eggplant.png",
-        veg4:"broccoli.png",
-        veg5:"garlics.png",
-        fruit_basket:"1-2.png",
+        beach:'candy.png',
+        cat:"cat_1.png",
+        mug:"mug_1.png",
+        book:"book_1.png",
+        cat1text1:"c.png",
+        cat2text2:"a.png",
+        cat3text3:"t.png",
+        mug1text1:"m.png",
+        mug2text2:"u.png",
+        mug3text3:"g.png",
+        book1text1:"b.png",
+        book2text2:"o_1.png",
+        book3text3:"o_1.png",
+        book4text4:"k.png",
+        cat1_black: 'square_1.png',
+        cat2_black: 'square_2.png',
+        cat3_black: 'square_3.png',
+        mug1_black: 'square_1.png',
+        mug2_black: 'square_2.png',
+        mug3_black: 'square_3.png',
+        book1_black: 'square_1.png',
+        book2_black: 'square_2.png',
+        book3_black: 'square_3.png',
+        book4_black: 'square_3.png',
+
       };
       loadImages(sources, initStage);

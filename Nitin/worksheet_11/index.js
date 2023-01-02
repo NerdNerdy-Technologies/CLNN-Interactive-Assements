@@ -29,13 +29,11 @@
         var o = outline;
         var ax = a.x();
         var ay = a.y();
-
-        console.log("Animal is",animal,"outline is,",outline)
         if(outline==undefined){
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
+        if (ax > o.x - 100 && ax < o.x + 200 && ay > o.y - 100 && ay < o.y + 200) {
           return true;
         } else {
           return false;
@@ -43,7 +41,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        context.drawImage(beachImg, 0, 0);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -53,7 +51,7 @@
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 1000,
+          width: 2000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -62,64 +60,49 @@
         var score = 0;
 
         // image positions
-        var animals = {   
-          booktext: {
-            x: 400,
-            y: 150,
+        var outlines = {
+          book: {
+            x: 10,
+            y: 50,
           },
-          crowntext: {
+          wire: {
+            x: 10,
+            y: 200,
+          },
+          wreck: {
+            x: 10,
+            y: 350,
+          },
+          fire: {
+            x: 400,
+            y: 50,
+          },
+          knife: {
             x: 400,
             y: 200,
           },
-          appletext: {
+          clipboard: {
             x: 400,
-            y: 250,
-          },
-          sixtext: {
-            x: 400,
-            y: 300,
+            y: 350,
           },
         };
 
-        var outlines = {
-          apple: {
-            x: 10,
-            y: 10,
-          },
-          crown: {
-            x: 10,
-            y: 250,
-          },
-          book: {
-            x: 10,
-            y: 480,
-          },
-          apple_black: {
+        var animals = {
+          knife_black: {
             x: 200,
             y: 50,
           },
-          crown_black: {
+          wreck_black: {
             x: 200,
-            y: 250,
+            y: 50,
           },
-          book_black: {
+          fire_black: {
             x: 200,
-            y: 450,
+            y: 50,
           },
-        };
-
-        var headings = {
-          applehead: {
-            x: 40,
-            y: 180,
-          },
-          crownhead: {
-            x: 40,
-            y: 420,
-          },
-          bookhead: {
-            x: 50,
-            y: 650,
+          wire_black: {
+            x: 200,
+            y: 50,
           },
         };
 
@@ -136,7 +119,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:35,
+              height:80,
               width:80,
             });
 
@@ -150,19 +133,17 @@
              * snap into place if it is
              */
             animal.on('dragend', function () {
-              console.log("key is",privKey)
-              var outline = outlines[privKey.slice(0,-4) + '_black'];
+              var outline = outlines[privKey.slice(0,-6)];
               //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
-                  x: outline.x+30,
-                  y: outline.y+60,
+                  x: outline.x,
+                  y: outline.y,
                 });
                 animal.inRightPlace = true;
                 if (++score >= 4) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
-                  //animals.destroy();
                 }
 
                 // disable drag and drop
@@ -209,9 +190,8 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:150,
-              height:150,
-              //opacity: 0.2,
+              width:100,
+              height:100,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -219,29 +199,6 @@
             animalLayer.add(outline);
           })();
         }
-
-        //for headings
-        for (var key in headings) {
-          // anonymous function to induce scope
-          (function () {
-            var imageObj = images[key];
-            var out = headings[key];
-
-            var heading = new Konva.Image({
-              image: imageObj,
-              x: out.x,
-              y: out.y,
-              width:100,
-              height:30,
-              stroke:"green",
-              strokeWidth:3
-            });
-
-            animalLayer.add(heading);
-          })();
-        }
-
-        //-----------------
 
         stage.add(background);
         stage.add(animalLayer);
@@ -255,17 +212,17 @@
 
       var sources = {
         beach:'candy.png',
-        apple:"apple_1.png",
-        crown:"crown_1.png",
-        book:"book_1.png",
-        applehead:"apple.png",
-        bookhead:"book.png",
-        crownhead:"crown.png",
-        appletext:"antext.png",
-        booktext:"thetext.png",
-        crowntext:"atext.png",
-        apple_black: 'square_1.png',
-        book_black: 'square_2.png',
-        crown_black: 'square_3.png',
+        book:"book.png",
+        knife:"knife.png",
+        fire:"fire.png",
+        wreck:"wreck.png",
+        wire:"wire.png",
+        mug:"mug.png",
+        clipboard:"clipboard.png",
+        knife_black: 'cross.png',
+        fire_black: 'cross.png',
+        wire_black: 'cross.png',
+        wreck_black: 'cross.png',
+        nineteen_black: 'cross.png',
       };
       loadImages(sources, initStage);

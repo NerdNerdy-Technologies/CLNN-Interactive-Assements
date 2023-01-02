@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        //context.drawImage(beachImg, 500, 100);
+        context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -63,43 +63,51 @@
 
         // image positions
         var animals = {   
-          morningtext: {
-            x: 700,
-            y: 100,
-          },
-          noontext: {
-            x: 700,
+          fourtext: {
+            x: 400,
             y: 150,
           },
-          nighttext: {
-            x: 700,
+          eighttext: {
+            x: 400,
             y: 200,
+          },
+          fivetext: {
+            x: 400,
+            y: 250,
+          },
+          sixtext: {
+            x: 400,
+            y: 300,
+          },
+          seventext: {
+            x: 400,
+            y: 350,
           },
         };
 
         var outlines = {
-          morning: {
-            x: 300,
+          four: {
+            x: 10,
             y: 50,
           },
-          noon: {
-            x: 300,
+          six: {
+            x: 10,
             y: 250,
           },
-          night: {
-            x: 300,
+          eight: {
+            x: 10,
             y: 450,
           },
-          morning_black: {
-            x: 500,
+          four_black: {
+            x: 200,
             y: 50,
           },
-          noon_black: {
-            x: 500,
+          six_black: {
+            x: 200,
             y: 250,
           },
-          night_black: {
-            x: 500,
+          eight_black: {
+            x: 200,
             y: 450,
           },
         };
@@ -117,7 +125,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:25,
+              height:35,
               width:80,
             });
 
@@ -140,7 +148,7 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 3) {
+                if (++score >= 4) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
@@ -212,14 +220,16 @@
 
       var sources = {
         beach:'candy.png',
-        morning:"morning.jpeg",
-        noon:"noon.jpg",
-        night:"night.jpg",
-        morningtext:"morningtext.png",
-        noontext:"noontext.png",
-        nighttext:"nighttext.png",
-        morning_black: 'square_2.png',
-        noon_black: 'square_2.png',
-        night_black: 'square_2.png',
+        four:"four.jpg",
+        six:"six.jpg",
+        eight:"eight.png",
+        fourtext:"fourtext.png",
+        eighttext:"eighttext.png",
+        sixtext:"sixtext.png",
+        seventext:"seventext.png",
+        fivetext:"fivetext.png",
+        four_black: 'square_1.png',
+        six_black: 'square_2.png',
+        eight_black: 'square_3.png',
       };
       loadImages(sources, initStage);

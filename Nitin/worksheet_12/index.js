@@ -30,6 +30,7 @@
         var ax = a.x();
         var ay = a.y();
 
+        console.log("Animal is",animal,"outline is,",outline)
         if(outline==undefined){
           return false;
         }
@@ -62,112 +63,77 @@
 
         // image positions
         var animals = {   
-          cat1text1: {
-            x: 280,
+          crowtext: {
+            x: 700,
             y: 150,
           },
-          cat3text3: {
-            x: 370,
-            y: 150,
+          nesttext: {
+            x: 700,
+            y: 200,
           },
-          cat2text2: {
-            x: 470,
-            y: 150,
+          flytext: {
+            x: 700,
+            y: 250,
           },
-          mug2text2: {
-            x: 320,
-            y: 380,
+          parrottext: {
+            x: 700,
+            y: 300,
           },
-          mug1text1: {
-            x: 420,
-            y: 380,
-          },
-          mug3text3: {
-            x: 520,
-            y: 380,
-          },
-          book1text1: {
-            x: 380,
-            y: 600,
-          },
-          book4text4: {
-            x: 480,
-            y: 600,
-          },
-          book3text3: {
-            x: 570,
-            y: 600,
-          },
-          book2text2: {
-            x: 660,
-            y: 600,
+          walktext: {
+            x: 700,
+            y: 350,
           },
         };
 
         var outlines = {
-          cat: {
-            x: 10,
+          crow: {
+            x: 150,
             y: 10,
           },
-          mug: {
-            x: 10,
+          nest: {
+            x: 150,
             y: 250,
           },
-          book: {
-            x: 10,
+          fly: {
+            x: 150,
             y: 480,
           },
-          cat1_black: {
-            x: 200,
-            y: 0,
+          crow_black: {
+            x: 400,
+            y: 40,
           },
-          cat2_black: {
-            x: 380,
-            y: 0,
+          nest_black: {
+            x: 400,
+            y: 250,
           },
-          cat3_black: {
-            x: 550,
-            y: 0,
+          fly_black: {
+            x: 400,
+            y: 500,
           },
-          mug1_black: {
-            x: 200,
-            y: 220,
-          },
-          mug2_black: {
-            x: 380,
-            y: 220,
-          },
-          mug3_black: {
-            x: 550,
-            y: 220,
-          },
-          book1_black: {
-            x: 200,
-            y: 450,
-          },
-          book2_black: {
-            x: 380,
-            y: 450,
-          },
-          book3_black: {
-            x: 550,
-            y: 450,
-          },
-          book4_black: {
-            x: 730,
-            y: 450,
-          }
         };
 
+        var headings = {
+          crowsent: {
+            x: 150,
+            y: 180,
+          },
+          nestsent: {
+            x: 150,
+            y: 420,
+          },
+          flysent: {
+            x: 150,
+            y: 650,
+          },
+        };
 
-
-        //---------------- create draggable animals
-        for (var key in animals) {  
+        // create draggable animals
+        for (var key in animals) {
+          
           // anonymous function to induce scope
           (function () {
             //key will be members of animals object like; monkey, bear
             var privKey = key;
-            console.log("key is",key)
             var anim = animals[key];
             var animal = new Konva.Image({
               image: images[key],
@@ -175,8 +141,10 @@
               y: anim.y,
               draggable: true, //to make the image draggable
               height:30,
-              width:35,
+              width:80,
             });
+
+            
 
             animal.on('dragstart', function () {
               this.moveToTop();
@@ -185,20 +153,22 @@
              * check if animal is in the right spot and
              * snap into place if it is
              */
-             //for cat
             animal.on('dragend', function () {
-              var outline = outlines[privKey.slice(0,-5) + '_black'];
+              console.log("key is",privKey)
+              var outline = outlines[privKey.slice(0,-4) + '_black'];
+              //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
                   x: outline.x+30,
                   y: outline.y+60,
-                });   
+                });
                 animal.inRightPlace = true;
-                if (++score >= 14) {
+                if (++score >= 4) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
                 }
+
                 // disable drag and drop
                 setTimeout(function () {
                   animal.draggable(false);
@@ -223,10 +193,6 @@
               document.body.style.cursor = 'pointer';
             });
 
-             animal.on('mouseover', function () {
-              document.body.style.cursor = 'pointer';
-            });
-
             animalLayer.add(animal);
             animalShapes.push(animal);
           })();
@@ -245,12 +211,35 @@
               y: out.y,
               width:150,
               height:150,
+              //opacity: 0.2,
+              //stroke:"green",
+              //strokeWidth:8
             });
 
             animalLayer.add(outline);
           })();
         }
 
+        //for headings
+        for (var key in headings) {
+          // anonymous function to induce scope
+          (function () {
+            var imageObj = images[key];
+            var out = headings[key];
+
+            var heading = new Konva.Image({
+              image: imageObj,
+              x: out.x,
+              y: out.y,
+              width:150,
+              height:30,
+              stroke:"green",
+              strokeWidth:3
+            });
+
+            animalLayer.add(heading);
+          })();
+        }
 
         //-----------------
 
@@ -266,29 +255,19 @@
 
       var sources = {
         beach:'candy.png',
-        cat:"cat_1.png",
-        mug:"mug_1.png",
-        book:"book_1.png",
-        cat1text1:"c.png",
-        cat2text2:"a.png",
-        cat3text3:"t.png",
-        mug1text1:"m.png",
-        mug2text2:"u.png",
-        mug3text3:"g.png",
-        book1text1:"b.png",
-        book2text2:"o_1.png",
-        book3text3:"o_1.png",
-        book4text4:"k.png",
-        cat1_black: 'square_1.png',
-        cat2_black: 'square_2.png',
-        cat3_black: 'square_3.png',
-        mug1_black: 'square_1.png',
-        mug2_black: 'square_2.png',
-        mug3_black: 'square_3.png',
-        book1_black: 'square_1.png',
-        book2_black: 'square_2.png',
-        book3_black: 'square_3.png',
-        book4_black: 'square_3.png',
-
+        crow:"crow.png",
+        nest:"nest.png",
+        fly:"fly.png",
+        crowsent:"crowsent.png",
+        nestsent:"nestsent.png",
+        flysent:"flysent.png",
+        crowtext:"crowtext.png",
+        nesttext:"nesttext.png",
+        flytext:"flytext.png",
+        parrottext:"parrottext.png",
+        walktext:"walktext.png",
+        crow_black: 'square_1.png',
+        nest_black: 'square_2.png',
+        fly_black: 'square_3.png',
       };
       loadImages(sources, initStage);

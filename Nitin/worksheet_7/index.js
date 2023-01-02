@@ -30,12 +30,7 @@
         var ax = a.x();
         var ay = a.y();
 
-        console.log("Animal is",animal,"outline is,",outline)
-        if(outline==undefined){
-          return false;
-        }
-
-        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
+        if (ax > o.x - 100 && ax < o.x + 300 && ay > o.y - 100 && ay < o.y + 300) {
           return true;
         } else {
           return false;
@@ -43,17 +38,17 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        //context.drawImage(beachImg, 800, 100);
+        //context.drawImage(beachImg, 0, 0);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
         context.fillText(text, background.getStage().width() / 2, 40);
       }
-
+ 
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 1000,
+          width: 2000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -62,60 +57,61 @@
         var score = 0;
 
         // image positions
-        var animals = {   
-          climbtext: {
-            x: 200,
-            y: 400,
+        var animals = {
+          fruit1: {
+            x: 0,
+            y: 50,
           },
-          climbingtext: {
-            x: 200,
-            y: 450,
+          fruit2: {
+            x: 0,
+            y: 200,
           },
-          crytext: {
-            x: 480,
-            y: 400,
+          fruit3: {
+            x: 0,
+            y: 350,
           },
-          cryingtext: {
-            x: 480,
-            y: 450,
+          fruit4: {
+            x: 0,
+            y: 500,
           },
-          playtext: {
-            x: 780,
-            y: 400,
+          fruit5: {
+            x: 0,
+            y: 650,
           },
-          playingtext: {
-            x: 780,
-            y: 450,
+          veg1: {
+            x: 250,
+            y: 50,
+          },
+          veg2: {
+            x: 250,
+            y: 200,
+          },
+          veg3: {
+            x: 250,
+            y: 350,
+          },
+          veg4: {
+            x: 250,
+            y: 500,
+          },
+          veg5: {
+            x: 250,
+            y: 650,
           },
         };
 
         var outlines = {
-          climb: {
-            x: 200,
+          veg_basket: {
+            x: 700,
             y: 50,
           },
-          cry: {
-            x: 450,
-            y: 50,
-          },
-          play: {
+          fruit_basket: {
             x: 750,
-            y: 50,
-          },
-          climb_black: {
-            x: 200,
-            y: 250,
-          },
-          cry_black: {
-            x: 450,
-            y: 250,
-          },
-          play_black: {
-            x: 750,
-            y: 250,
+            y: 400,
           },
         };
 
+        var add=50;
         // create draggable animals
         for (var key in animals) {
           
@@ -124,42 +120,59 @@
             //key will be members of animals object like; monkey, bear
             var privKey = key;
             var anim = animals[key];
+
             var animal = new Konva.Image({
               image: images[key],
               x: anim.x,
               y: anim.y,
+              width:130,
+              height:130,
               draggable: true, //to make the image draggable
-              height:35,
-              width:80,
             });
+
 
             animal.on('dragstart', function () {
               this.moveToTop();
             });
+
+              animal.on('mouseover', function () {
+              this.opacity(1);
+            });
+
+            animal.on('mouseout', function () {
+              this.opacity(0.8);
+             });
             /*
              * check if animal is in the right spot and
              * snap into place if it is
              */
+             
             animal.on('dragend', function () {
-              console.log("key is",privKey)
-              var outline = outlines[privKey.slice(0,-4) + '_black'];
-              //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
+              var outline = outlines[privKey.slice(0,-1) + '_basket'];
+              console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
+               
+                console.log(add);
                 animal.position({
-                  x: outline.x+30,
-                  y: outline.y+60,
+                  x: outline.x+add,
+                  y: outline.y+50,
                 });
+                add=add+30;
+                if(score==5){
+                  add=add-100;
+                }
+                
                 animal.inRightPlace = true;
-                if (++score >= 3) {
-                  var text = `Quiz Completed! Your score is: `+score;
+                if (++score >= 10) {
+                  var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
-                  //animals.destroy();
                 }
 
                 // disable drag and drop
                 setTimeout(function () {
                   animal.draggable(false);
                 }, 50);
+                
               }else{
                   animal.position({
                   x: anim.x,
@@ -200,10 +213,8 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:150,
-              height:150,
-              //stroke:"green",
-              //strokeWidth:8
+              width:400,
+              height:350,
             });
 
             animalLayer.add(outline);
@@ -221,18 +232,18 @@
       }
 
       var sources = {
-        beach:'candy.png',
-        climb:"climb.png",
-        play:"play.png",
-        cry:"cry.png",
-        climbtext:"climbtext.png",
-        playtext:"playtext.png",
-        crytext:"crytext.png",
-        climbingtext:"climbing.png",
-        playingtext:"playing.png",
-        cryingtext:"crying.png",
-        climb_black: 'square_1.png',
-        cry_black: 'square_2.png',
-        play_black: 'square_3.png',
+        beach:'beach.png',
+        fruit1:"mango.png",
+        fruit2:"grapes.png",
+        fruit3:"apple.png",
+        fruit4:"strawberry.png",
+        fruit5:"banana.png",
+        veg1:"bellpepper.png",
+        veg2:"carrot.png",
+        veg3:"eggplant.png",
+        veg4:"broccoli.png",
+        veg5:"garlics.png",
+        fruit_basket:"basket_fruit1.png",
+        veg_basket:"basket_veg1.png"
       };
       loadImages(sources, initStage);

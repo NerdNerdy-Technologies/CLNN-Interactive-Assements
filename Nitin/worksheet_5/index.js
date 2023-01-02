@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        //context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 800, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -63,56 +63,56 @@
 
         // image positions
         var animals = {   
-          ontext: {
-            x: 900,
-            y: 50,
+          climbtext: {
+            x: 200,
+            y: 400,
           },
-          righttext: {
-            x: 900,
-            y: 100,
+          climbingtext: {
+            x: 200,
+            y: 450,
           },
-          undertext: {
-            x: 900,
-            y: 150,
+          crytext: {
+            x: 480,
+            y: 400,
           },
-          behindtext: {
-            x: 900,
-            y: 200,
+          cryingtext: {
+            x: 480,
+            y: 450,
+          },
+          playtext: {
+            x: 780,
+            y: 400,
+          },
+          playingtext: {
+            x: 780,
+            y: 450,
           },
         };
 
         var outlines = {
-          on: {
+          climb: {
             x: 200,
             y: 50,
           },
-          under: {
-            x: 550,
+          cry: {
+            x: 450,
             y: 50,
           },
-          behind: {
+          play: {
+            x: 750,
+            y: 50,
+          },
+          climb_black: {
             x: 200,
-            y: 350,
+            y: 250,
           },
-          right: {
-            x: 550,
-            y: 350,
+          cry_black: {
+            x: 450,
+            y: 250,
           },
-          on_black: {
-            x: 200,
-            y: 160,
-          },
-          under_black: {
-            x: 550,
-            y: 160,
-          },
-          behind_black: {
-            x: 200,
-            y: 460,
-          },
-          right_black: {
-            x: 550,
-            y: 460,
+          play_black: {
+            x: 750,
+            y: 250,
           },
         };
 
@@ -133,8 +133,6 @@
               width:80,
             });
 
-            //console.log("draggable animal list is",animal)
-
             animal.on('dragstart', function () {
               this.moveToTop();
             });
@@ -152,8 +150,8 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
-                  var text = `You win! Your score is: `+score;
+                if (++score >= 3) {
+                  var text = `Quiz Completed! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
                 }
@@ -224,17 +222,17 @@
 
       var sources = {
         beach:'candy.png',
-        on:"1.png",
-        behind:"3.png",
-        right:"4.png",
-        under:"2.png",
-        ontext:"ontext.png",
-        undertext:"undertext.png",
-        behindtext:"behindtext.png",
-        righttext:"righttext.png",
-        on_black: 'square_1.png',
-        behind_black: 'square_2.png',
-        under_black: 'square_3.png',
-        right_black: 'square_4.png',
+        climb:"climb.png",
+        play:"play.png",
+        cry:"cry.png",
+        climbtext:"climbtext.png",
+        playtext:"playtext.png",
+        crytext:"crytext.png",
+        climbingtext:"climbing.png",
+        playingtext:"playing.png",
+        cryingtext:"crying.png",
+        climb_black: 'square_1.png',
+        cry_black: 'square_2.png',
+        play_black: 'square_3.png',
       };
       loadImages(sources, initStage);

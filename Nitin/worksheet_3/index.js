@@ -35,7 +35,7 @@
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 200 && ay > o.y - 100 && ay < o.y + 200) {
+        if (ax > o.x - 100 && ax < o.x + 100 && ay > o.y - 100 && ay < o.y + 100) {
           return true;
         } else {
           return false;
@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 0, 0);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -53,7 +53,7 @@
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
-          width: 2000,
+          width: 1000,
           height: 800,
         });
         var background = new Konva.Layer();
@@ -62,45 +62,57 @@
         var score = 0;
 
         // image positions
-        var animals = {
-          one: {
-            x: 10,
+        var animals = {   
+          ontext: {
+            x: 900,
             y: 50,
           },
-          eight: {
-            x: 10,
+          righttext: {
+            x: 900,
+            y: 100,
+          },
+          undertext: {
+            x: 900,
+            y: 150,
+          },
+          behindtext: {
+            x: 900,
             y: 200,
-          },
-          seventysix: {
-            x: 10,
-            y: 350,
-          },
-          five: {
-            x: 400,
-            y: 50,
-          },
-          nineteen: {
-            x: 400,
-            y: 200,
-          },
-          ninetyfive: {
-            x: 400,
-            y: 350,
           },
         };
 
         var outlines = {
-          five_black: {
+          on: {
             x: 200,
             y: 50,
           },
-          nineteen_black: {
-            x: 200,
-            y: 200,
+          under: {
+            x: 550,
+            y: 50,
           },
-          ninetyfive_black: {
+          behind: {
             x: 200,
             y: 350,
+          },
+          right: {
+            x: 550,
+            y: 350,
+          },
+          on_black: {
+            x: 200,
+            y: 160,
+          },
+          under_black: {
+            x: 550,
+            y: 160,
+          },
+          behind_black: {
+            x: 200,
+            y: 460,
+          },
+          right_black: {
+            x: 550,
+            y: 460,
           },
         };
 
@@ -117,7 +129,7 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:80,
+              height:35,
               width:80,
             });
 
@@ -131,17 +143,19 @@
              * snap into place if it is
              */
             animal.on('dragend', function () {
-              var outline = outlines[privKey + '_black'];
+              console.log("key is",privKey)
+              var outline = outlines[privKey.slice(0,-4) + '_black'];
               //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
                 animal.position({
-                  x: outline.x,
-                  y: outline.y,
+                  x: outline.x+30,
+                  y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 3) {
+                if (++score >= 4) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
+                  //animals.destroy();
                 }
 
                 // disable drag and drop
@@ -188,8 +202,8 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:100,
-              height:100,
+              width:150,
+              height:150,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -209,15 +223,18 @@
       }
 
       var sources = {
-        beach:'beach.jpg',
-        one:"one.png",
-        five:"five.png",
-        eight:"eight.png",
-        nineteen:"nineteen.png",
-        seventysix:"seventysix.png",
-        ninetyfive:"ninetyfive.png",
-        five_black: 'square_1.png',
-        nineteen_black: 'square_2.png',
-        ninetyfive_black: 'square_3.png',
+        beach:'candy.png',
+        on:"1.png",
+        behind:"3.png",
+        right:"4.png",
+        under:"2.png",
+        ontext:"ontext.png",
+        undertext:"undertext.png",
+        behindtext:"behindtext.png",
+        righttext:"righttext.png",
+        on_black: 'square_1.png',
+        behind_black: 'square_2.png',
+        under_black: 'square_3.png',
+        right_black: 'square_4.png',
       };
       loadImages(sources, initStage);

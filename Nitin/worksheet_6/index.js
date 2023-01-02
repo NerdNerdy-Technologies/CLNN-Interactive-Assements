@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -63,52 +63,88 @@
 
         // image positions
         var animals = {   
-          fourtext: {
-            x: 400,
+          hearttext: {
+            x: 50,
+            y: 50,
+          },
+          circletext: {
+            x: 50,
+            y: 100,
+          },
+          startext: {
+            x: 50,
             y: 150,
           },
-          eighttext: {
-            x: 400,
+          triangletext: {
+            x: 50,
             y: 200,
           },
-          fivetext: {
-            x: 400,
-            y: 250,
+          redtext: {
+            x: 850,
+            y: 50,
           },
-          sixtext: {
-            x: 400,
-            y: 300,
+          bluetext: {
+            x: 850,
+            y: 100,
           },
-          seventext: {
-            x: 400,
-            y: 350,
+          greentext: {
+            x: 850,
+            y: 150,
+          },
+          yellowtext: {
+            x: 850,
+            y: 200,
           },
         };
 
         var outlines = {
-          four: {
-            x: 10,
+          heart: {
+            x: 300,
             y: 50,
           },
-          six: {
-            x: 10,
-            y: 250,
-          },
-          eight: {
-            x: 10,
-            y: 450,
-          },
-          four_black: {
-            x: 200,
+          circle: {
+            x: 600,
             y: 50,
           },
-          six_black: {
-            x: 200,
-            y: 250,
+          star: {
+            x: 300,
+            y: 350,
           },
-          eight_black: {
-            x: 200,
-            y: 450,
+          triangle: {
+            x: 600,
+            y: 350,
+          },
+          heart_black: {
+            x: 300,
+            y: 160,
+          },
+          circle_black: {
+            x: 600,
+            y: 160,
+          },
+          star_black: {
+            x: 300,
+            y: 460,
+          },
+          triangle_black: {
+            x: 600,
+            y: 460,
+          },
+          red_black: {
+            x: 300,
+            y: 220,
+          },
+          blue_black: {
+            x: 600,
+            y: 220,
+          },
+          yellow_black: {
+            x: 300,
+            y: 520,
+          },
+          green_black: {
+            x: 600,
+            y: 520,
           },
         };
 
@@ -128,8 +164,6 @@
               height:35,
               width:80,
             });
-
-            //console.log("draggable animal list is",animal)
 
             animal.on('dragstart', function () {
               this.moveToTop();
@@ -220,16 +254,25 @@
 
       var sources = {
         beach:'candy.png',
-        four:"four.jpg",
-        six:"six.jpg",
-        eight:"eight.png",
-        fourtext:"fourtext.png",
-        eighttext:"eighttext.png",
-        sixtext:"sixtext.png",
-        seventext:"seventext.png",
-        fivetext:"fivetext.png",
-        four_black: 'square_1.png',
-        six_black: 'square_2.png',
-        eight_black: 'square_3.png',
+        heart:"heart.png",
+        circle:"circle.png",
+        star:"star.png",
+        triangle:"triangle.png",
+        hearttext:"hearttext.png",
+        circletext:"circletext.png",
+        startext:"startext.png",
+        triangletext:"triangletext.png",
+        redtext:"redtext.png",
+        greentext:"greentext.png",
+        yellowtext:"yellowtext.png",
+        bluetext:"bluetext.png",
+        heart_black: 'square_1.png',
+        circle_black: 'square_2.png',
+        star_black: 'square_3.png',
+        triangle_black: 'square_4.png',
+        red_black: 'square_1.png',
+        blue_black: 'square_2.png',
+        yellow_black: 'square_3.png',
+        green_black: 'square_4.png',
       };
       loadImages(sources, initStage);

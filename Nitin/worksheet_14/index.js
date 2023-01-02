@@ -63,67 +63,64 @@
 
         // image positions
         var animals = {   
-          crowtext: {
-            x: 700,
+          moontext: {
+            x: 500,
+            y: 50,
+          },
+          suntext: {
+            x: 500,
+            y: 100,
+          },
+          fishtext: {
+            x: 500,
             y: 150,
           },
-          nesttext: {
-            x: 700,
+          walktext: {
+            x: 500,
             y: 200,
           },
-          flytext: {
-            x: 700,
+          cattext: {
+            x: 500,
             y: 250,
           },
-          parrottext: {
-            x: 700,
+          dogtext: {
+            x: 500,
             y: 300,
-          },
-          walktext: {
-            x: 700,
-            y: 350,
           },
         };
 
         var outlines = {
-          crow: {
-            x: 150,
-            y: 10,
+          walk: {
+            x: 10,
+            y: 50,
           },
-          nest: {
-            x: 150,
-            y: 250,
+          dog: {
+            x: 250,
+            y: 50,
           },
-          fly: {
-            x: 150,
-            y: 480,
+          moon: {
+            x: 10,
+            y: 350,
           },
-          crow_black: {
-            x: 400,
-            y: 40,
+          fish: {
+            x: 250,
+            y: 350,
           },
-          nest_black: {
-            x: 400,
-            y: 250,
+          walk_black: {
+            x: 10,
+            y: 160,
           },
-          fly_black: {
-            x: 400,
-            y: 500,
+          dog_black: {
+            x: 250,
+            y: 160,
           },
-        };
-
-        var headings = {
-          crowsent: {
-            x: 150,
-            y: 180,
+          moon_black: {
+            x: 10,
+            y: 460,
           },
-          nestsent: {
-            x: 150,
-            y: 420,
-          },
-          flysent: {
-            x: 150,
-            y: 650,
+          fish_black: {
+            x: 250,
+            y: 460,
           },
         };
 
@@ -140,11 +137,11 @@
               x: anim.x,
               y: anim.y,
               draggable: true, //to make the image draggable
-              height:30,
+              height:35,
               width:80,
             });
 
-            
+            //console.log("draggable animal list is",animal)
 
             animal.on('dragstart', function () {
               this.moveToTop();
@@ -181,7 +178,11 @@
                 }); 
               }
             }); 
-
+            // make animal glow on mouseover
+/*            animal.on('mouseover', function () {
+              animal.image(images[privKey + '_glow']);
+              document.body.style.cursor = 'pointer';
+            });*/
 
             // return animal on mouseout
             animal.on('mouseout', function () {
@@ -211,7 +212,6 @@
               y: out.y,
               width:150,
               height:150,
-              //opacity: 0.2,
               //stroke:"green",
               //strokeWidth:8
             });
@@ -219,29 +219,6 @@
             animalLayer.add(outline);
           })();
         }
-
-        //for headings
-        for (var key in headings) {
-          // anonymous function to induce scope
-          (function () {
-            var imageObj = images[key];
-            var out = headings[key];
-
-            var heading = new Konva.Image({
-              image: imageObj,
-              x: out.x,
-              y: out.y,
-              width:150,
-              height:30,
-              stroke:"green",
-              strokeWidth:3
-            });
-
-            animalLayer.add(heading);
-          })();
-        }
-
-        //-----------------
 
         stage.add(background);
         stage.add(animalLayer);
@@ -255,19 +232,19 @@
 
       var sources = {
         beach:'candy.png',
-        crow:"crow.png",
-        nest:"nest.png",
-        fly:"fly.png",
-        crowsent:"crowsent.png",
-        nestsent:"nestsent.png",
-        flysent:"flysent.png",
-        crowtext:"crowtext.png",
-        nesttext:"nesttext.png",
-        flytext:"flytext.png",
-        parrottext:"parrottext.png",
+        walk:"walk.png",
+        dog:"dog.png",
+        moon:"moon.png",
+        fish:"fish.png",
         walktext:"walktext.png",
-        crow_black: 'square_1.png',
-        nest_black: 'square_2.png',
-        fly_black: 'square_3.png',
+        moontext:"moontext.png",
+        suntext:"suntext.png",
+        cattext:"cattext.png",
+        dogtext:"dogtext.png",
+        fishtext:"fishtext.png",
+        walk_black: 'square_1.png',
+        dog_black: 'square_1.png',
+        moon_black: 'square_1.png',
+        fish_black: 'square_1.png',
       };
       loadImages(sources, initStage);
