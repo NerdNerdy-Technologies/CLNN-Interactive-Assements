@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>10</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #cf9f9f;
+        text-align: center;
+      }
+      .options-1 {
+        border-right: 5px solid black;
+      }
+      .options-2 {
+        border-left: 5px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Circke the object that does not relate to the scene.</h1>
+
+    <div class="row">
+      <div class="options-1 col">
+        <img
+          class="col-8"
+          src="/Shivank/worksheet_10/assets/images/winterland.jpg"
+          alt=""
+        />
+        <br />
+
+        <img
+          class="flake btn"
+          src="/Shivank/worksheet_10/assets/images/flake.png"
+          alt=""
+          width="200px"
+        />
+
+        <img
+          class="scarf btn"
+          src="/Shivank/worksheet_10/assets/images/scarf.png"
+          alt=""
+          width="200px"
+        />
+
+        <img
+          class="snowman btn"
+          src="/Shivank/worksheet_10/assets/images/snowman.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="sweater btn"
+          src="/Shivank/worksheet_10/assets/images/sweater.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="sunflower btn"
+          src="/Shivank/worksheet_10/assets/images/sunflower.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="tree btn"
+          src="/Shivank/worksheet_10/assets/images/christmas-tree.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="slippers btn"
+          src="/Shivank/worksheet_10/assets/images/slippers.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="mountain btn"
+          src="/Shivank/worksheet_10/assets/images/mountain.png"
+          alt=""
+          width="200px"
+        />
+      </div>
+
+      <div class="options-2 col">
+        <img
+          class="col-10"
+          src="/Shivank/worksheet_10/assets/images/water-drops.jpg"
+          alt=""
+        />
+        <br />
+
+        <img
+          class="umbrella btn"
+          src="/Shivank/worksheet_10/assets/images/umbrella.png"
+          alt=""
+          width="200px"
+        />
+
+        <img
+          class="raincoat btn"
+          src="/Shivank/worksheet_10/assets/images/raincoat.png"
+          alt=""
+          width="200px"
+          height="250px"
+        />
+
+        <img
+          class="raincloud btn"
+          src="/Shivank/worksheet_10/assets/images/raincloud.png"
+          alt=""
+          width="200px"
+        />
+
+        <img
+          class="windy btn"
+          src="/Shivank/worksheet_10/assets/images/windy.png"
+          alt=""
+          width="200px"
+        />
+
+        <img
+          class="cap btn"
+          src="/Shivank/worksheet_10/assets/images/cap.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="ice-cream btn"
+          src="/Shivank/worksheet_10/assets/images/ice-cream.png"
+          alt=""
+          width="200px"
+          height="250px"
+        />
+        <img
+          class="rainy-umbrella btn"
+          src="/Shivank/worksheet_10/assets/images/rainy-umbrella.png"
+          alt=""
+          width="200px"
+        />
+        <img
+          class="cloudy btn"
+          src="/Shivank/worksheet_10/assets/images/cloudy.png"
+          alt=""
+          width="200px"
+        />
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function wrong(element) {
+        element.addEventListener(
+          "click",
+          () => (element.style.background = "#dc3545")
+        );
+      }
+
+      function correct(element) {
+        element.addEventListener(
+          "click",
+          () => (element.style.background = "#198754")
+        );
+      }
+
+      const cap = document.querySelector(".cap");
+      const tree = document.querySelector(".tree");
+      const cloudy = document.querySelector(".cloudy");
+      const flake = document.querySelector(".flake");
+      const ice_cream = document.querySelector(".ice-cream");
+      const mountain = document.querySelector(".mountain");
+      const raincloud = document.querySelector(".raincloud");
+      const raincoat = document.querySelector(".raincoat");
+      const rainy_umbrella = document.querySelector(".rainy-umbrella");
+      const scarf = document.querySelector(".scarf");
+      const slippers = document.querySelector(".slippers");
+      const snowman = document.querySelector(".snowman");
+      const sunflower = document.querySelector(".sunflower");
+      const sweater = document.querySelector(".sweater");
+      const umbrella = document.querySelector(".umbrella");
+      const windy = document.querySelector(".windy");
+
+      correct(tree);
+      correct(cloudy);
+      correct(flake);
+      correct(mountain);
+      correct(raincloud);
+      correct(raincoat);
+      correct(rainy_umbrella);
+      correct(scarf);
+      correct(snowman);
+      correct(sweater);
+      correct(umbrella);
+      correct(windy);
+      wrong(ice_cream);
+      wrong(cap);
+      wrong(slippers);
+      wrong(sunflower);
+    </script>
+  </body>
+</html>

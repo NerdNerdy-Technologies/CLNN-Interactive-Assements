@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>14</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #c1ebe9;
+        text-align: center;
+      }
+      .hidden {
+        display: none;
+      }
+      .btn {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Memory Game</h1>
+
+    <div class="options mt-5 p-5">
+      <img src="/Shivank/worksheet_14/assets/images/cloud.png" width="200px" />
+      <img src="/Shivank/worksheet_14/assets/images/sun.png" width="200px" />
+    </div>
+
+    <div class="answers hidden mt-5 p-5">
+      <h2>What items did you just saw?</h2>
+      <img
+        class="one-1 btn"
+        src="/Shivank/worksheet_14/assets/images/cloud.png"
+        width="200px"
+      />
+      <img
+        class="one-2 btn"
+        src="/Shivank/worksheet_14/assets/images/stars.png"
+        width="200px"
+      />
+      <img
+        class="one-3 btn"
+        src="/Shivank/worksheet_14/assets/images/sun.png"
+        width="200px"
+      />
+
+      <br />
+
+      <img
+        class="one-4 btn"
+        src="/Shivank/worksheet_14/assets/images/moon.png"
+        width="200px"
+      />
+    </div>
+
+    <br />
+    <button class="btn btn-primary start">Start</button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function wrong(element) {
+        element.addEventListener(
+          "click",
+          () => (element.style.background = "#dc3545")
+        );
+      }
+
+      function correct(element) {
+        element.addEventListener(
+          "click",
+          () => (element.style.background = "#198754")
+        );
+      }
+
+      const one_1 = document.querySelector(".one-1");
+      const one_2 = document.querySelector(".one-2");
+      const one_3 = document.querySelector(".one-3");
+      const one_4 = document.querySelector(".one-4");
+
+      const answer = document.querySelector(".answers");
+      const button = document.querySelector(".start");
+      const els = document.querySelectorAll(".options, .start");
+
+      correct(one_1);
+      wrong(one_2);
+      correct(one_3);
+      wrong(one_4);
+
+      button.addEventListener("click", _addClass);
+      function _addClass() {
+        for (var i = 0; i < els.length; i++) {
+          els[i].classList.add("hidden");
+        }
+      }
+
+      button.addEventListener("click", _removeClass);
+      function _removeClass() {
+        answer.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
