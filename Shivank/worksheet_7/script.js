@@ -2,7 +2,7 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 let totalImages = 0;
 function loadImages(sources, callback) {
-  let assetDir = "/Shivank/worksheet_7/assets/images/";
+  let assetDir = "./assets/images/";
   let images = {};
   let loadedImages = 0;
   let numImages = 0;
