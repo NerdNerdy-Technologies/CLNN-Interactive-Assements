@@ -28,11 +28,7 @@
 
     <div class="row">
       <div class="options-1 col">
-        <img
-          class="col-8"
-          src="./assets/images/winterland.jpg"
-          alt=""
-        />
+        <img class="col-8" src="./assets/images/winterland.jpg" alt="" />
         <br />
 
         <img
@@ -88,11 +84,7 @@
       </div>
 
       <div class="options-2 col">
-        <img
-          class="col-10"
-          src="./assets/images/water-drops.jpg"
-          alt=""
-        />
+        <img class="col-10" src="./assets/images/water-drops.jpg" alt="" />
         <br />
 
         <img
@@ -160,16 +152,14 @@
 
     <script>
       function wrong(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#dc3545")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-danger")
         );
       }
 
       function correct(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#198754")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-success")
         );
       }
 

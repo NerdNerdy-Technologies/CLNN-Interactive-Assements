@@ -97,16 +97,14 @@
 
     <script>
       function wrong(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#dc3545")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-danger")
         );
       }
 
       function correct(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#198754")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-success")
         );
       }
 
