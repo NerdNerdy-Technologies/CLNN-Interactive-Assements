@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -98,11 +98,11 @@
             x: 200,
             y: 50,
           },
-          crown_black: {
+          book_black: {
             x: 200,
             y: 250,
           },
-          book_black: {
+          crown_black: {
             x: 200,
             y: 450,
           },
@@ -159,8 +159,8 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
-                  var text = `You win! Your score is: `+score;
+                if (++score >= 3) {
+                  var text = `Worksheet Completed! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
                 }

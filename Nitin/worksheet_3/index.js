@@ -67,7 +67,7 @@
             x: 900,
             y: 50,
           },
-          righttext: {
+          besidetext: {
             x: 900,
             y: 100,
           },
@@ -94,7 +94,7 @@
             x: 200,
             y: 350,
           },
-          right: {
+          beside: {
             x: 550,
             y: 350,
           },
@@ -110,7 +110,7 @@
             x: 200,
             y: 460,
           },
-          right_black: {
+          beside_black: {
             x: 550,
             y: 460,
           },
@@ -226,15 +226,15 @@
         beach:'candy.png',
         on:"1.png",
         behind:"3.png",
-        right:"4.png",
+        beside:"4.png",
         under:"2.png",
         ontext:"ontext.png",
         undertext:"undertext.png",
         behindtext:"behindtext.png",
-        righttext:"righttext.png",
+        besidetext:"besidetext.png",
         on_black: 'square_1.png',
         behind_black: 'square_2.png',
         under_black: 'square_3.png',
-        right_black: 'square_4.png',
+        beside_black: 'square_4.png',
       };
       loadImages(sources, initStage);

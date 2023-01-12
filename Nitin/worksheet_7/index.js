@@ -60,43 +60,43 @@
         var animals = {
           fruit1: {
             x: 0,
-            y: 50,
+            y: 10,
           },
           fruit2: {
             x: 0,
-            y: 200,
+            y: 160,
           },
           fruit3: {
             x: 0,
-            y: 350,
+            y: 320,
           },
           fruit4: {
             x: 0,
-            y: 500,
+            y: 450,
           },
           fruit5: {
             x: 0,
-            y: 650,
+            y: 580,
           },
           veg1: {
             x: 250,
-            y: 50,
+            y: 10,
           },
           veg2: {
             x: 250,
-            y: 200,
+            y: 160,
           },
           veg3: {
             x: 250,
-            y: 350,
+            y: 320,
           },
           veg4: {
             x: 250,
-            y: 500,
+            y: 450,
           },
           veg5: {
             x: 250,
-            y: 650,
+            y: 580,
           },
         };
 
@@ -125,8 +125,8 @@
               image: images[key],
               x: anim.x,
               y: anim.y,
-              width:130,
-              height:130,
+              width:110,
+              height:110,
               draggable: true, //to make the image draggable
             });
 
@@ -151,13 +151,11 @@
               var outline = outlines[privKey.slice(0,-1) + '_basket'];
               console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
               if (!animal.inRightPlace && isNearOutline(animal, outline)) {
-               
-                console.log(add);
                 animal.position({
                   x: outline.x+add,
                   y: outline.y+50,
                 });
-                add=add+30;
+                add=add+20;
                 if(score==5){
                   add=add-100;
                 }
@@ -213,8 +211,8 @@
               image: imageObj,
               x: out.x,
               y: out.y,
-              width:400,
-              height:350,
+              width:380,
+              height:300,
             });
 
             animalLayer.add(outline);
@@ -241,7 +239,7 @@
         veg1:"bellpepper.png",
         veg2:"carrot.png",
         veg3:"eggplant.png",
-        veg4:"broccoli.png",
+        veg4:"broccoli2.png",
         veg5:"garlics.png",
         fruit_basket:"basket_fruit1.png",
         veg_basket:"basket_veg1.png"

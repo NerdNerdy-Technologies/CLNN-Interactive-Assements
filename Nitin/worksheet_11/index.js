@@ -33,7 +33,7 @@
           return false;
         }
 
-        if (ax > o.x - 100 && ax < o.x + 200 && ay > o.y - 100 && ay < o.y + 200) {
+        if (ax > o.x - 50 && ax < o.x + 50 && ay > o.y - 50 && ay < o.y + 50) {
           return true;
         } else {
           return false;
@@ -41,7 +41,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 0, 0);
+        //context.drawImage(beachImg, 0, 0);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -79,11 +79,11 @@
           },
           knife: {
             x: 400,
-            y: 200,
+            y: 350,
           },
           clipboard: {
             x: 400,
-            y: 350,
+            y: 200,
           },
         };
 
@@ -215,7 +215,7 @@
         book:"book.png",
         knife:"knife.png",
         fire:"fire.png",
-        wreck:"wreck.png",
+        wreck:"hook.png",
         wire:"wire.png",
         mug:"mug.png",
         clipboard:"clipboard.png",
