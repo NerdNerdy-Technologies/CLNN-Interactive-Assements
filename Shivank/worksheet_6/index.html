@@ -43,24 +43,9 @@
     </div>
 
     <h2>SQUARE</h2>
-    <img
-      class="two-1 btn"
-      src="./assets/images/2-1.png"
-      alt=""
-      width="200px"
-    />
-    <img
-      class="two-2 btn"
-      src="./assets/images/2-2.png"
-      alt=""
-      width="200px"
-    />
-    <img
-      class="two-3 btn"
-      src="./assets/images/2-3.png"
-      alt=""
-      width="200px"
-    />
+    <img class="two-1 btn" src="./assets/images/2-1.png" alt="" width="200px" />
+    <img class="two-2 btn" src="./assets/images/2-2.png" alt="" width="200px" />
+    <img class="two-3 btn" src="./assets/images/2-3.png" alt="" width="200px" />
 
     <h2>TRIANGLE</h2>
     <img
@@ -90,16 +75,14 @@
 
     <script>
       function wrong(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#dc3545")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-danger")
         );
       }
 
       function correct(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#198754")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-success")
         );
       }
 

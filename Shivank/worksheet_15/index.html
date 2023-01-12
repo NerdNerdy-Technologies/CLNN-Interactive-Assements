@@ -26,37 +26,28 @@
   <body>
     <h1>Memory Game</h1>
 
-    <div class="options mt-5 p-5">
+    <div class="question mt-5 p-5">
+      <h3>
+        Memorize the upcoming images. Once start button is clicked, the images
+        will be visible for 5 seconds.
+      </h3>
+    </div>
+
+    <div class="options hidden mt-5 p-5">
       <img src="./assets/images/cloud.png" width="200px" />
       <img src="./assets/images/sun.png" width="200px" />
       <img src="./assets/images/moon.png" width="200px" />
     </div>
 
     <div class="answers hidden mt-5 p-5">
-      <h2>What items did you just saw?</h2>
-      <img
-        class="one-1 btn"
-        src="./assets/images/cloud.png"
-        width="200px"
-      />
-      <img
-        class="one-2 btn"
-        src="./assets/images/stars.png"
-        width="200px"
-      />
-      <img
-        class="one-3 btn"
-        src="./assets/images/sun.png"
-        width="200px"
-      />
+      <h2>What items did you just see?</h2>
+      <img class="one-1 btn" src="./assets/images/cloud.png" width="200px" />
+      <img class="one-2 btn" src="./assets/images/stars.png" width="200px" />
+      <img class="one-3 btn" src="./assets/images/sun.png" width="200px" />
 
       <br />
 
-      <img
-        class="one-4 btn"
-        src="./assets/images/moon.png"
-        width="200px"
-      />
+      <img class="one-4 btn" src="./assets/images/moon.png" width="200px" />
       <img
         class="one-5 btn"
         src="./assets/images/raincloud.png"
@@ -75,16 +66,14 @@
 
     <script>
       function wrong(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#dc3545")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-danger")
         );
       }
 
       function correct(element) {
-        element.addEventListener(
-          "click",
-          () => (element.style.background = "#198754")
+        element.addEventListener("click", () =>
+          element.classList.toggle("btn-success")
         );
       }
 
@@ -93,10 +82,10 @@
       const one_3 = document.querySelector(".one-3");
       const one_4 = document.querySelector(".one-4");
       const one_5 = document.querySelector(".one-5");
-
       const answer = document.querySelector(".answers");
       const button = document.querySelector(".start");
-      const els = document.querySelectorAll(".options, .start");
+      const options = document.querySelector(".options");
+      const question = document.querySelector(".question");
 
       correct(one_1);
       wrong(one_2);
@@ -104,16 +93,21 @@
       correct(one_4);
       wrong(one_5);
 
-      button.addEventListener("click", _addClass);
-      function _addClass() {
-        for (var i = 0; i < els.length; i++) {
-          els[i].classList.add("hidden");
-        }
-      }
-
       button.addEventListener("click", _removeClass);
       function _removeClass() {
-        answer.classList.remove("hidden");
+        options.classList.remove("hidden");
+        setTimeout(() => {
+          answer.classList.remove("hidden");
+        }, 5000);
+      }
+
+      button.addEventListener("click", _addClass);
+      function _addClass() {
+        button.classList.add("hidden");
+        question.classList.add("hidden");
+        setTimeout(() => {
+          options.classList.add("hidden");
+        }, 5000);
       }
     </script>
   </body>

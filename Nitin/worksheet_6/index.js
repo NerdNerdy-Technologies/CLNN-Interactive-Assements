@@ -182,8 +182,8 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
-                  var text = `You win! Your score is: `+score;
+                if (++score >= 8) {
+                  var text = `Worksheet Completed! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
                 }

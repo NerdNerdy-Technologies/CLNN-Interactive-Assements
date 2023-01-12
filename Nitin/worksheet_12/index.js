@@ -64,24 +64,28 @@
         // image positions
         var animals = {   
           crowtext: {
-            x: 700,
-            y: 150,
+            x: 640,
+            y: 100,
           },
           nesttext: {
-            x: 700,
-            y: 200,
+            x: 640,
+            y: 310,
+          },
+          groundtext: {
+            x: 740,
+            y: 310,
           },
           flytext: {
-            x: 700,
-            y: 250,
+            x: 740,
+            y: 555,
           },
           parrottext: {
-            x: 700,
-            y: 300,
+            x: 740,
+            y: 100,
           },
           walktext: {
-            x: 700,
-            y: 350,
+            x: 650,
+            y: 555,
           },
         };
 
@@ -163,8 +167,8 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
-                  var text = `You win! Your score is: `+score;
+                if (++score >= 3) {
+                  var text = `Worksheet Completed! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
                 }
@@ -263,6 +267,7 @@
         flysent:"flysent.png",
         crowtext:"crowtext.png",
         nesttext:"nesttext.png",
+        groundtext:"groundtext.png",
         flytext:"flytext.png",
         parrottext:"parrottext.png",
         walktext:"walktext.png",

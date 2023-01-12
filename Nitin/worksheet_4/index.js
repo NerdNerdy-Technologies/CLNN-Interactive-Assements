@@ -43,7 +43,7 @@
       }
       function drawBackground(background, beachImg, text) {
         var context = background.getContext();
-        context.drawImage(beachImg, 500, 100);
+        //context.drawImage(beachImg, 500, 100);
         context.setAttr('font', '20pt Calibri');
         context.setAttr('textAlign', 'center');
         context.setAttr('fillStyle', 'black');
@@ -126,7 +126,7 @@
               y: anim.y,
               draggable: true, //to make the image draggable
               height:35,
-              width:80,
+              width:50,
             });
 
             //console.log("draggable animal list is",animal)
@@ -148,7 +148,7 @@
                   y: outline.y+60,
                 });
                 animal.inRightPlace = true;
-                if (++score >= 4) {
+                if (++score >= 3) {
                   var text = `You win! Your score is: `+score;
                   drawBackground(background, images.beach, text);
                   //animals.destroy();
