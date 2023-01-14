@@ -1,3 +1,5 @@
+import { start, end } from "../../app.js";
+let startTime = start();
 let width = window.innerWidth;
 let height = window.innerHeight;
 let totalImages = 0;
@@ -38,14 +40,14 @@ function isNearOutline(animal, outline) {
     return false;
   }
 }
-function drawBackground(background, beachImg, text) {
-  let context = background.getContext();
-  context.drawImage(beachImg, 0, 0);
-  context.setAttr("font", "20pt Calibri");
-  context.setAttr("textAlign", "center");
-  context.setAttr("fillStyle", "black");
-  context.fillText(text, background.getStage().width() / 2, 40);
-}
+// function drawBackground(background, beachImg, text) {
+//   let context = background.getContext();
+//   context.drawImage(beachImg, 0, 0);
+//   context.setAttr("font", "20pt Calibri");
+//   context.setAttr("textAlign", "center");
+//   context.setAttr("fillStyle", "black");
+//   context.fillText(text, background.getStage().width() / 2, 40);
+// }
 
 function initStage(images) {
   let stage = new Konva.Stage({
@@ -150,7 +152,8 @@ function initStage(images) {
           animal.inRightPlace = true;
           if (++score >= 6) {
             let text = `You win! Your score is: ` + score;
-            drawBackground(background, images.beach, text);
+            end(startTime);
+            // drawBackground(background, images.beach, text);
           }
 
           // disable drag and drop
