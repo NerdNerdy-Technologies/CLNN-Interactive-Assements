@@ -19,27 +19,22 @@
       }
     </style>
   </head>
-
   <body>
     <h1>Point to the following objects.</h1>
-
     <div class="m-5">
       <h2>Nose</h2>
-
       <img
         class="one-1 btn"
         src="./assets/images/1-1.png"
         alt=""
         width="200px"
       />
-
       <img
         class="one-2 btn"
         src="./assets/images/1-2.png"
         alt=""
         width="200px"
       />
-
       <img
         class="one-3 btn"
         src="./assets/images/1-3.png"
@@ -47,35 +42,42 @@
         width="200px"
       />
     </div>
-
     <h2>Car</h2>
-
     <img class="two-1 btn" src="./assets/images/2-1.png" alt="" width="200px" />
-
     <img class="two-2 btn" src="./assets/images/2-2.png" alt="" width="200px" />
-
     <img class="two-3 btn" src="./assets/images/2-3.png" alt="" width="200px" />
-
-    <script>
+    <script type="module" >
+      import { start, end } from "../../app.js";
+      let startTime = start();
+      let correctAnswer = 0;
+      let incorrectAnswer = 0;
       function wrong(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () => {
           element.classList.toggle("btn-danger")
-        );
+          incorrectAnswer++
+          check();
+      });
       }
 
       function correct(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () =>{
           element.classList.toggle("btn-success")
-        );
+          correctAnswer++
+          check();
+      });
       }
+      function check(){
 
+      if(correctAnswer == 2){
+        end(startTime);
+      }
+      }
       const one_1 = document.querySelector(".one-1");
       const one_2 = document.querySelector(".one-2");
       const one_3 = document.querySelector(".one-3");
       const two_1 = document.querySelector(".two-1");
       const two_2 = document.querySelector(".two-2");
       const two_3 = document.querySelector(".two-3");
-
       correct(one_1);
       wrong(one_2);
       wrong(one_3);

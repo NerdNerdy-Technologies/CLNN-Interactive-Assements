@@ -42,17 +42,31 @@
     <img class="two-2 btn" src="./assets/images/2-2.png" alt="" width="160px" />
     <img class="two-3 btn" src="./assets/images/2-3.png" alt="" width="160px" />
 
-    <script>
+    <script type="module" >
+      import { start, end } from "../../app.js";
+      let startTime = start();
+      let correctAnswer = 0;
+      let incorrectAnswer = 0;
       function wrong(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () => {
           element.classList.toggle("btn-danger")
-        );
+          incorrectAnswer++
+          check();
+      });
       }
 
       function correct(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () =>{
           element.classList.toggle("btn-success")
-        );
+          correctAnswer++
+          check();
+      });
+      }
+      function check(){
+
+      if(correctAnswer == 2){
+        end(startTime);
+      }
       }
 
       const one_1 = document.querySelector(".one-1");

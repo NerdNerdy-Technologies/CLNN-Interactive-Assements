@@ -14,16 +14,13 @@
         background-color: #bcf8d7;
         text-align: center;
       }
-
       ul {
         list-style: none;
       }
     </style>
   </head>
-
   <body>
     <h1>Describe what you see.</h1>
-
     <img src="./assets/images/1-1.png" alt="" width="200px" />
     <ul>
       <li>
@@ -36,7 +33,6 @@
         <p class="one-3 btn">A family having lunch.</p>
       </li>
     </ul>
-
     <img src="./assets/images/2-1.png" alt="" width="200px" />
     <ul>
       <li>
@@ -49,27 +45,38 @@
         <p class="two-3 btn">A dog playing with stick.</p>
       </li>
     </ul>
-
-    <script>
+    <script type="module" >
+      import { start, end } from "../../app.js";
+      let startTime = start();
+      let correctAnswer = 0;
+      let incorrectAnswer = 0;
       function wrong(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () => {
           element.classList.toggle("btn-danger")
-        );
+          incorrectAnswer++
+          check();
+      });
       }
 
       function correct(element) {
-        element.addEventListener("click", () =>
+        element.addEventListener("click", () =>{
           element.classList.toggle("btn-success")
-        );
+          correctAnswer++
+          check();
+      });
       }
+      function check(){
 
+      if(correctAnswer == 2){
+        end(startTime);
+      }
+      }
       const one_1 = document.querySelector(".one-1");
       const one_2 = document.querySelector(".one-2");
       const one_3 = document.querySelector(".one-3");
       const two_1 = document.querySelector(".two-1");
       const two_2 = document.querySelector(".two-2");
       const two_3 = document.querySelector(".two-3");
-
       correct(one_1);
       wrong(one_2);
       wrong(one_3);
