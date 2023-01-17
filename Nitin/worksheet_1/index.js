@@ -1,6 +1,10 @@
 import { start, end } from "../../app.js";
 let startTime = start();
-document.getElementById("param").innerHTML = "New text!";
+// document.getElementById("param").innerHTML = "New text!";
+
+let params = "hello world";
+document.getElementById("param").innerHTML = "params";
+
 
 var width = window.innerWidth;
 var height = window.innerHeight;
