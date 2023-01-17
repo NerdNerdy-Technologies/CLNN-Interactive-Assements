@@ -2,7 +2,7 @@ import { start, end } from "../../app.js";
 let startTime = start();
 // document.getElementById("param").innerHTML = "New text!";
 
-let variable = "hello world";
+var variable = "hello world";
 document.getElementById("param").innerHTML = variable;
 
 
