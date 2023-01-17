@@ -36,8 +36,11 @@ function getParams(){
   }
   return params;
 }
-params = getParams();
-alert(params);
+// params = getParams();
+// alert(params);
+// params = JSON.stringify(params);
+// document.getElementById(params).innerHTML.
+alert("hey this is piyush")
 // 
 
 
