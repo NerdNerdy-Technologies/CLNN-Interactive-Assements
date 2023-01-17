@@ -42,7 +42,9 @@ function getParams(){
   }
   return params;
 }
-var params = JSON.stringify(getParams());
+var params = getParams();
+
+// var params = JSON.stringify(getParams());
 document.getElementById("param").innerHTML = params;
 
 // let params = "hello world";
