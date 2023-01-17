@@ -24,19 +24,19 @@ function loadImages(sources, callback) {
   //console.log("images are",images)
 }
 // 
-function getParams(){
-  var idx = document.URL.indexOf('?');
-  var params = new Array();
-  if (idx != -1) {
-      var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-      for (var i=0; i<pairs.length; i++){
-         let nameVal = pairs[i].split('=');
-          params[nameVal[0]] = nameVal[1];
-      }
-  }
-  return params;
-}
-params = JSON.stringify(getParams());
+// function getParams(){
+//   var idx = document.URL.indexOf('?');
+//   var params = new Array();
+//   if (idx != -1) {
+//       var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+//       for (var i=0; i<pairs.length; i++){
+//          let nameVal = pairs[i].split('=');
+//           params[nameVal[0]] = nameVal[1];
+//       }
+//   }
+//   return params;
+// }
+// params = JSON.stringify(getParams());
 params = `hello world`;
 document.getElementById("param").innerHTML = params;
 
