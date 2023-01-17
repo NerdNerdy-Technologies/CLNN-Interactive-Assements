@@ -37,8 +37,10 @@ function loadImages(sources, callback) {
 //   return params;
 // }
 // params = JSON.stringify(getParams());
-let params = "hello world";
-document.getElementById("param").innerHTML = "params";
+document.getElementById("param").innerHTML = "New text!";
+
+// let params = "hello world";
+// document.getElementById("param").innerHTML = "params";
 
 
 
