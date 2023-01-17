@@ -36,7 +36,7 @@ function getParams(){
   if (idx != -1) {
       var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
       for (var i=0; i<pairs.length; i++){
-         let nameVal = pairs[i].split('=');
+         var nameVal = pairs[i].split('=');
           params[nameVal[0]] = nameVal[1];
       }
   }
