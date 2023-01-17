@@ -36,13 +36,13 @@ function getParams(){
   }
   return params;
 }
-// params = getParams();
+params = getParams();
 // alert(params);
 // params = JSON.stringify(params);
 // document.getElementById(params).innerHTML.
 // alert("hey this is piyush");
 // 
-document.getElementById("param").innerHTML = "New text added!";
+document.getElementById("param").innerHTML = params;
 
 
 
