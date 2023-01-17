@@ -3,7 +3,7 @@ let startTime = start();
 // document.getElementById("param").innerHTML = "New text!";
 
 let params = "hello world";
-document.getElementById("param").innerHTML = "params";
+document.getElementById("param").innerHTML = params;
 
 
 var width = window.innerWidth;
