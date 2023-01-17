@@ -40,7 +40,7 @@ function getParams(){
 // alert(params);
 // params = JSON.stringify(params);
 // document.getElementById(params).innerHTML.
-alert("hey this is piyush")
+alert("hey this is piyush");
 // 
 
 
