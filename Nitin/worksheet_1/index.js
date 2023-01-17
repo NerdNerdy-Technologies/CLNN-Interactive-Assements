@@ -1,5 +1,7 @@
 import { start, end } from "../../app.js";
 let startTime = start();
+document.getElementById("param").innerHTML = "New text added!";
+
 var width = window.innerWidth;
 var height = window.innerHeight;
 var totalImages = 0;
@@ -41,8 +43,6 @@ function loadImages(sources, callback) {
 // params = JSON.stringify(params);
 // document.getElementById(params).innerHTML.
 // alert("hey this is piyush");
-document.getElementById("param").innerHTML = "New text added!";
-
 // 
 
 
