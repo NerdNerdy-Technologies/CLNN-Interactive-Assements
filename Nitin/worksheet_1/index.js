@@ -2,8 +2,8 @@ import { start, end } from "../../app.js";
 let startTime = start();
 // document.getElementById("param").innerHTML = "New text!";
 
-var variable = "hello world";
-document.getElementById("param").innerHTML = variable;
+// var variable = "hello world";
+// document.getElementById("param").innerHTML = variable;
 
 
 var width = window.innerWidth;
@@ -29,21 +29,21 @@ function loadImages(sources, callback) {
   }
   //console.log("images are",images)
 }
-// 
-// function getParams(){
-//   var idx = document.URL.indexOf('?');
-//   var params = new Array();
-//   if (idx != -1) {
-//       var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-//       for (var i=0; i<pairs.length; i++){
-//          let nameVal = pairs[i].split('=');
-//           params[nameVal[0]] = nameVal[1];
-//       }
-//   }
-//   return params;
-// }
-// params = JSON.stringify(getParams());
-// document.getElementById("param").innerHTML = "New text!";
+
+function getParams(){
+  var idx = document.URL.indexOf('?');
+  var params = new Array();
+  if (idx != -1) {
+      var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+      for (var i=0; i<pairs.length; i++){
+         let nameVal = pairs[i].split('=');
+          params[nameVal[0]] = nameVal[1];
+      }
+  }
+  return params;
+}
+var params = JSON.stringify(getParams());
+document.getElementById("param").innerHTML = params;
 
 // let params = "hello world";
 // document.getElementById("param").innerHTML = "params";
