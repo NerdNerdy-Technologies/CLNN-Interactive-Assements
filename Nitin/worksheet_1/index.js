@@ -36,12 +36,7 @@ function getParams(){
   }
   return params;
 }
-params = getParams();
-// alert(params);
-// params = JSON.stringify(params);
-// document.getElementById(params).innerHTML.
-// alert("hey this is piyush");
-// 
+params = JSON.stringify(getParams());
 document.getElementById("param").innerHTML = params;
 
 
@@ -53,7 +48,7 @@ function isNearOutline(animal, outline) {
   var ax = a.x();
   var ay = a.y();
 
-  console.log("Animal is", animal, "outline is,", outline)
+  // console.log("Animal is", animal, "outline is,", outline)
   if (outline == undefined) {
     return false;
   }
