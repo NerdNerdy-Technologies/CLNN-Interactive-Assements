@@ -37,7 +37,7 @@ function loadImages(sources, callback) {
 //   return params;
 // }
 // params = JSON.stringify(getParams());
-params = `hello world`;
+let params = "hello world";
 document.getElementById("param").innerHTML = params;
 
 
