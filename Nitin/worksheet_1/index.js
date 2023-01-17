@@ -41,7 +41,7 @@ function loadImages(sources, callback) {
 // params = JSON.stringify(params);
 // document.getElementById(params).innerHTML.
 // alert("hey this is piyush");
-document.getElementById("param").innerHTML = "New text added!";
+// document.getElementById("param").innerHTML = "New text added!";
 
 // 
 
