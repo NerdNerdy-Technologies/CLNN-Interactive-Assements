@@ -37,7 +37,7 @@ function getParams(){
   return params;
 }
 params = JSON.stringify(getParams());
-params = `hello world`
+params = `hello world`;
 document.getElementById("param").innerHTML = params;
 
 
