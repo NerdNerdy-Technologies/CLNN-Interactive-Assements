@@ -37,8 +37,8 @@ async function uploadData(details) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "userID": details.userID,
-            "Name": details.name,
+            "userID": details.studentId,
+            // "Name": details.name,
             "time_spent": details.time
         })
     });
