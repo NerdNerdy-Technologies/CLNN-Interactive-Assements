@@ -31,7 +31,7 @@ async function uploadData(details) {
         },
         body: JSON.stringify({
             "userID": details.studentId,
-            // "assessmentID": details.assessmenttId,
+            "teacherID": details.teacherID,
             "time_spent": details.time
         })
     });
