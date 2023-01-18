@@ -5,7 +5,7 @@ return new Date().getTime();
 function end(startTime) {
 
     var URLParamsArr = new URLSearchParams(window.location.search)
-    console.log(URLParamsArr.userID)
+    console.log(URLParamsArr)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
     // var assessmentID = URLParamsArr.get('ass')
@@ -32,6 +32,7 @@ async function uploadData(details) {
         body: JSON.stringify({
             "userID": details.studentId,
             "teacherID": details.teacherID,
+            "assessmenttId": "assessment" + new Date(),
             "time_spent": details.time
         })
     });
