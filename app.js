@@ -8,7 +8,7 @@ function end(startTime) {
     // var query_string= window.location.search;
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
-    console.log("student ID is ",studentId)
+    // console.log("student ID is ",studentId)
     var assessmenttId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('userID');
     var correct = URLParamsArr.get('userID');
@@ -18,7 +18,7 @@ function end(startTime) {
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
-        studentId: studentId,
+        // studentId: studentId,
         assessmenttId: "assessmenttId",
         // teacherID: teacherID,
         // correct: correct,
@@ -37,7 +37,7 @@ async function uploadData(details) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "userID": details.studentId,
+            // "userID": details.studentId,
             "asswssmentID": details.assessmenttId,
             "time_spent": details.time
         })
