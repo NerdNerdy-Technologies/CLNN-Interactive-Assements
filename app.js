@@ -35,7 +35,7 @@ async function uploadData(details) {
             "time_spent": details.time,
             "correct": "correct",
             "incorrect": "incorrect",
-            "totalOptions": details.totalOptions,
+            // "totalOptions": details.totalOptions,
         })
     });
 
