@@ -18,7 +18,7 @@ function end(startTime) {
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
-        studentId: studentId,
+        studentId: this.studentId,
         // assessmenttId: assessmenttId,
         // teacherID: teacherID,
         // correct: correct,
