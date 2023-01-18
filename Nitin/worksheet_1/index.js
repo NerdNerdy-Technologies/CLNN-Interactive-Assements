@@ -33,7 +33,8 @@ function loadImages(sources, callback) {
 function getParams(){
   // var query_string= window.location.search;
   var URLParamsArr = new URLSearchParams(window.location.search)
-  var userID =JSON.stringify(URLParamsArr.get('userID'));
+  var userID =URLParamsArr.get('userID');
+  // var userID =JSON.stringify(URLParamsArr.get('userID'));
   // var idx = document.URL.indexOf('?');
   // var params = new Array();
   // if (idx != -1) {
