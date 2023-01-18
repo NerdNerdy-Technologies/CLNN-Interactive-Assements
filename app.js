@@ -23,7 +23,10 @@ async function uploadData(details) {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+        },
+        params: {
+            "queryType": "addResult",
         },
         body: JSON.stringify({
             "studentId": details.studentId,
