@@ -31,16 +31,18 @@ function loadImages(sources, callback) {
 }
 
 function getParams(){
-  var idx = document.URL.indexOf('?');
-  var params = new Array();
-  if (idx != -1) {
-      var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-      for (var i=0; i<pairs.length; i++){
-         var nameVal = pairs[i].split('=');
-          params[nameVal[0]] = nameVal[1];
-      }
-  }
-  return params;
+  var query_string= window.location.search;
+  // var idx = document.URL.indexOf('?');
+  // var params = new Array();
+  // if (idx != -1) {
+  //     var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+  //     for (var i=0; i<pairs.length; i++){
+  //        var nameVal = pairs[i].split('=');
+  //         params[nameVal[0]] = nameVal[1];
+  //     }
+  // }
+  // return params;
+  return query_string;
 }
 var params = getParams();
 
