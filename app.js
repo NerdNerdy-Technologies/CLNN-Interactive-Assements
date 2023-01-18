@@ -25,9 +25,9 @@ async function uploadData(details) {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        params: {
-            queryType: "addResult"
-        },
+        // params: {
+        //     queryType: "addResult"
+        // },
         body: JSON.stringify({
             "studentId": details.studentId,
             "teacherID": details.teacherID,
