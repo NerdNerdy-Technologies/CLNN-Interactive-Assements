@@ -21,18 +21,14 @@ function loadImages(sources, callback) {
     };
     images[src].src = assetDir + sources[src];
   }
-  //console.log("images are",images)
 }
 
 
 function isNearOutline(animal, outline) {
-  //console.log("Animal",animal,"Outline",outline)
   var a = animal;
   var o = outline;
   var ax = a.x();
   var ay = a.y();
-
-  console.log("Animal is", animal, "outline is,", outline)
   if (outline == undefined) {
     return false;
   }
@@ -45,7 +41,6 @@ function isNearOutline(animal, outline) {
 }
 function drawBackground(background, beachImg, text) {
   var context = background.getContext();
-  //context.drawImage(beachImg, 500, 100);
   context.setAttr('font', '20pt Calibri');
   context.setAttr('textAlign', 'center');
   context.setAttr('fillStyle', 'black');
@@ -123,7 +118,6 @@ function initStage(images) {
         width: 80,
       });
 
-      //console.log("draggable animal list is",animal)
 
       animal.on('dragstart', function () {
         this.moveToTop();
@@ -133,9 +127,7 @@ function initStage(images) {
        * snap into place if it is
        */
       animal.on('dragend', function () {
-        console.log("key is", privKey)
         var outline = outlines[privKey.slice(0, -4) + '_black'];
-        //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
         if (!animal.inRightPlace && isNearOutline(animal, outline)) {
           animal.position({
             x: outline.x + 30,

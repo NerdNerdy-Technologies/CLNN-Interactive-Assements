@@ -151,7 +151,7 @@ function initStage(images) {
 
       animal.on('dragend', function () {
         var outline = outlines[privKey.slice(0, -1) + '_basket'];
-        console.log("inRightPlace___", animal.inRightPlace, "outline___", outline, "animal__", animal)
+        // console.log("inRightPlace___", animal.inRightPlace, "outline___", outline, "animal__", animal)
         if (!animal.inRightPlace && isNearOutline(animal, outline)) {
           animal.position({
             x: outline.x + add,

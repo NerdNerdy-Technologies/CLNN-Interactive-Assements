@@ -32,7 +32,7 @@ function isNearOutline(animal, outline) {
   var ax = a.x();
   var ay = a.y();
 
-  console.log("Animal is", animal, "outline is,", outline)
+  // console.log("Animal is", animal, "outline is,", outline)
   if (outline == undefined) {
     return false;
   }
@@ -141,7 +141,7 @@ function initStage(images) {
        * snap into place if it is
        */
       animal.on('dragend', function () {
-        console.log("key is", privKey)
+        // console.log("key is", privKey)
         var outline = outlines[privKey.slice(0, -4) + '_black'];
         //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
         if (!animal.inRightPlace && isNearOutline(animal, outline)) {

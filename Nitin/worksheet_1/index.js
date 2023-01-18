@@ -1,11 +1,5 @@
 import { start, end } from "../../app.js";
 let startTime = start();
-// document.getElementById("param").innerHTML = "New text!";
-
-// var variable = "hello world";
-// document.getElementById("param").innerHTML = variable;
-
-
 var width = window.innerWidth;
 var height = window.innerHeight;
 var totalImages = 0;
@@ -27,27 +21,13 @@ function loadImages(sources, callback) {
     };
     images[src].src = assetDir + sources[src];
   }
-  //console.log("images are",images)
 }
-
-// function getParams(){
-//   // var query_string= window.location.search;
-//   var URLParamsArr = new URLSearchParams(window.location.search)
-//   var userID =URLParamsArr.get('userID');
-//   return userID;
-// }
-// var params = getParams();
-// document.getElementById("param").innerHTML = params;
-
-
 function isNearOutline(animal, outline) {
-  //console.log("Animal",animal,"Outline",outline)
   var a = animal;
   var o = outline;
   var ax = a.x();
   var ay = a.y();
 
-  // console.log("Animal is", animal, "outline is,", outline)
   if (outline == undefined) {
     return false;
   }
@@ -120,36 +100,25 @@ function initStage(images) {
       y: 350,
     },
   };
-
-  // create draggable animals
   for (var key in animals) {
-
-    // anonymous function to induce scope
     (function () {
-      //key will be members of animals object like; monkey, bear
       var privKey = key;
       var anim = animals[key];
       var animal = new Konva.Image({
         image: images[key],
         x: anim.x,
         y: anim.y,
-        draggable: true, //to make the image draggable
+        draggable: true, 
         height: 80,
         width: 80,
       });
 
-      //console.log("draggable animal list is",animal)
 
       animal.on('dragstart', function () {
         this.moveToTop();
       });
-      /*
-       * check if animal is in the right spot and
-       * snap into place if it is
-       */
       animal.on('dragend', function () {
         var outline = outlines[privKey + '_black'];
-        //console.log("inRightPlace___",animal.inRightPlace,"outline___",outline,"animal__",animal)
         if (!animal.inRightPlace && isNearOutline(animal, outline)) {
           animal.position({
             x: outline.x,
@@ -161,8 +130,6 @@ function initStage(images) {
             end(startTime,3);
             drawBackground(background, images.beach, text);
           }
-
-          // disable drag and drop
           setTimeout(function () {
             animal.draggable(false);
           }, 50);
@@ -174,13 +141,6 @@ function initStage(images) {
           });
         }
       });
-      // make animal glow on mouseover
-      /*            animal.on('mouseover', function () {
-                    animal.image(images[privKey + '_glow']);
-                    document.body.style.cursor = 'pointer';
-                  });*/
-
-      // return animal on mouseout
       animal.on('mouseout', function () {
         animal.image(images[privKey]);
         document.body.style.cursor = 'default';
@@ -194,10 +154,7 @@ function initStage(images) {
       animalShapes.push(animal);
     })();
   }
-
-  // create animal outlines
   for (var key in outlines) {
-    // anonymous function to induce scope
     (function () {
       var imageObj = images[key];
       var out = outlines[key];
@@ -208,8 +165,6 @@ function initStage(images) {
         y: out.y,
         width: 100,
         height: 100,
-        //stroke:"green",
-        //strokeWidth:8
       });
 
       animalLayer.add(outline);

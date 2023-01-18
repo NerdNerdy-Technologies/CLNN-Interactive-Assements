@@ -141,7 +141,7 @@ function initStage(images) {
                             add=add-10;
                           }*/
 
-          console.log("Score is ", score)
+          // console.log("Score is ", score)
           animal.inRightPlace = true;
           if (++score >= 2) {
             var text = `You win! Your score is: ` + score;

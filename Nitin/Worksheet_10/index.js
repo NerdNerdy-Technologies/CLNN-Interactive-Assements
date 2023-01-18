@@ -169,7 +169,7 @@ function initStage(images) {
     (function () {
       //key will be members of animals object like; monkey, bear
       var privKey = key;
-      console.log("key is", key)
+      // console.log("key is", key)
       var anim = animals[key];
       var animal = new Konva.Image({
         image: images[key],
