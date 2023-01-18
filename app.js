@@ -29,7 +29,7 @@ async function uploadData(details) {
             "studentId": details.studentId,
             "teacherID": details.teacherID,
             "assessmenttId": details.studentId + Date.now(),
-            "time_spent": details.timeSpend,
+            "timeSpend": details.timeSpend,
             "correct": "correct",
             "totalOptions": details.totalOptions,
         })
