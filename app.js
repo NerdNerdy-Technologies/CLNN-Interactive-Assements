@@ -26,7 +26,7 @@ function end(startTime) {
         // totalOptions: totalOptions,
         timeSpend: totalTime,
     };
-    console.log(details);
+    // console.log(details);
     uploadData(details);
 }
 async function uploadData(details) {
@@ -38,7 +38,7 @@ async function uploadData(details) {
         },
         body: JSON.stringify({
             // "userID": details.studentId,
-            "asswssmentID": details.assessmenttId,
+            "assessmentID": details.assessmenttId,
             "time_spent": details.time
         })
     });
