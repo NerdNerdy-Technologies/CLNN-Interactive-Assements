@@ -30,31 +30,14 @@ function loadImages(sources, callback) {
   //console.log("images are",images)
 }
 
-function getParams(){
-  // var query_string= window.location.search;
-  var URLParamsArr = new URLSearchParams(window.location.search)
-  var userID =URLParamsArr.get('userID');
-  // var userID =JSON.stringify(URLParamsArr.get('userID'));
-  // var idx = document.URL.indexOf('?');
-  // var params = new Array();
-  // if (idx != -1) {
-  //     var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-  //     for (var i=0; i<pairs.length; i++){
-  //        var nameVal = pairs[i].split('=');
-  //         params[nameVal[0]] = nameVal[1];
-  //     }
-  // }
-  // return params;
-  return userID;
-}
-var params = getParams();
-
-// var params = JSON.stringify(getParams());
-document.getElementById("param").innerHTML = params;
-
-// let params = "hello world";
-// document.getElementById("param").innerHTML = "params";
-
+// function getParams(){
+//   // var query_string= window.location.search;
+//   var URLParamsArr = new URLSearchParams(window.location.search)
+//   var userID =URLParamsArr.get('userID');
+//   return userID;
+// }
+// var params = getParams();
+// document.getElementById("param").innerHTML = params;
 
 
 function isNearOutline(animal, outline) {
