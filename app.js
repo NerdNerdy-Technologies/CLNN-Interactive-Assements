@@ -9,20 +9,19 @@ function end(startTime) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     console.log(URLParamsArr)
     var studentId = URLParamsArr.get('userID');
-    console.log(studentId)
-    // console.log("student ID is ",studentId)
-    // var assessmenttId = URLParamsArr.get('userID');
-    // var teacherID = URLParamsArr.get('userID');
-    // var correct = URLParamsArr.get('userID');
-    // var incorrect = URLParamsArr.get('userID');
-    // var totalOptions = URLParamsArr.get('userID');
-    // var timeSpend = URLParamsArr.get('userID');
+    // console.log(studentId)
+    if(teacherID){
+        var teacherID = URLParamsArr.get('userID');
+    }
+    else{
+        var teacherID = "";
+    }
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
         studentId: studentId,
-        assessmenttId: "assessmenttId",
-        // teacherID: teacherID,
+        assessmenttId: assessmenttId,
+        teacherID: teacherID,
         // correct: correct,
         // incorrect: incorrect,
         // totalOptions: totalOptions,
