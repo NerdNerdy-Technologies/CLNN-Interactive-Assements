@@ -186,7 +186,7 @@ function initStage(images) {
           animal.inRightPlace = true;
           if (++score >= 8) {
             var text = `Worksheet Completed! Your score is: ` + score;
-            end(startTime);
+            end(startTime,8);
             drawBackground(background, images.beach, text);
             //animals.destroy();
           }

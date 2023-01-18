@@ -143,7 +143,7 @@ function initStage(images) {
           });
           animal.inRightPlace = true;
           if (++score >= 3) {
-            end(startTime);
+            end(startTime,3);
             var text = `You win! Your score is: ` + score;
             drawBackground(background, images.beach, text);
             //animals.destroy();

@@ -152,7 +152,7 @@ function initStage(images) {
           animal.inRightPlace = true;
           if (++score >= 6) {
             let text = `You win! Your score is: ` + score;
-            end(startTime);
+            end(startTime,6);
             // drawBackground(background, images.beach, text);
           }
 

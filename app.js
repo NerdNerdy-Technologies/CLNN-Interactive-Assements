@@ -2,7 +2,7 @@
 function start() {
 return new Date().getTime();
 }
-function end(startTime) {
+function end(startTime,totalOptions) {
 
     var URLParamsArr = new URLSearchParams(window.location.search)
     console.log(URLParamsArr)
@@ -17,7 +17,7 @@ function end(startTime) {
         teacherID: teacherID,
         // correct: correct,
         // incorrect: incorrect,
-        // totalOptions: totalOptions,
+        totalOptions: totalOptions,
         timeSpend: totalTime,
     };
     uploadData(details);
@@ -36,7 +36,7 @@ async function uploadData(details) {
             "time_spent": details.time,
             "correct": "correct",
             "incorrect": "incorrect",
-            "totalOptions": "totalOptions",
+            "totalOptions": totalOptions,
         })
     });
 

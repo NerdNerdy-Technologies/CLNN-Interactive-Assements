@@ -152,9 +152,9 @@ function initStage(images) {
             y: outline.y + 60,
           });
           animal.inRightPlace = true;
-          if (++score >= 3) {
+          if (++score >= 2) {
             var text = `Quiz Completed! Your score is: ` + score;
-            end(startTime);
+            end(startTime,4);
             drawBackground(background, images.beach, text);
             //animals.destroy();
           }
