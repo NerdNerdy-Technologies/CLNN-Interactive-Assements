@@ -158,7 +158,8 @@ function initStage(images) {
           animal.inRightPlace = true;
           if (++score >= 3) {
             var text = `You win! Your score is: ` + score;
-            end(startTime,3);
+            var totalOptions = 3;
+            end(startTime,totalOptions);
             drawBackground(background, images.beach, text);
           }
 
