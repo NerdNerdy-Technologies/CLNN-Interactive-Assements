@@ -18,8 +18,8 @@ function end(startTime) {
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
-        studentId: this.studentId,
-        // assessmenttId: assessmenttId,
+        studentId: studentId,
+        assessmenttId: "assessmenttId",
         // teacherID: teacherID,
         // correct: correct,
         // incorrect: incorrect,
@@ -38,7 +38,7 @@ async function uploadData(details) {
         },
         body: JSON.stringify({
             "userID": details.studentId,
-            // "Name": details.name,
+            "asswssmentID": details.assessmenttId,
             "time_spent": details.time
         })
     });
