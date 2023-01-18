@@ -18,11 +18,11 @@ function end(startTime) {
     const totalTime = (end - startTime) / 1000;
     const details = {
         studentId: studentId,
-        assessmenttId: assessmenttId,
-        teacherID: teacherID,
-        correct: correct,
-        incorrect: incorrect,
-        totalOptions: totalOptions,
+        // assessmenttId: assessmenttId,
+        // teacherID: teacherID,
+        // correct: correct,
+        // incorrect: incorrect,
+        // totalOptions: totalOptions,
         timeSpend: totalTime,
     };
     console.log(details);
