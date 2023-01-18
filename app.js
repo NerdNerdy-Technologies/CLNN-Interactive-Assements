@@ -19,7 +19,7 @@ function end(startTime,totalOptions) {
     uploadData(details);
 }
 async function uploadData(details) {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    const response = await fetch("https://cbqrznufal.execute-api.ap-south-1.amazonaws.com/default/CLNN-AssmentsHandler", {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
