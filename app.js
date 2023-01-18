@@ -31,7 +31,7 @@ async function uploadData(details) {
             "assessmenttId": details.studentId + Date.now(),
             "timeSpend": details.timeSpend,
             "correct": "correct",
-            "totalOptions": details.totalOptions,
+            "totalOptions": totalTime,
         })
     });
 
