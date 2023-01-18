@@ -7,7 +7,6 @@ function end(startTime,totalOptions) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
-    // var assessmentID = URLParamsArr.get('ass')
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
@@ -25,9 +24,6 @@ async function uploadData(details) {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        // params: {
-        //     queryType: "addResult"
-        // },
         body: JSON.stringify({
             "studentId": details.studentId,
             "teacherID": details.teacherID,
