@@ -32,11 +32,11 @@ function end(startTime) {
     const totalTime = (end - startTime) / 1000;
     const details = {
         studentId: studentId,
-        assessmenttId: body.assessmenttId,
-        teacherID: body.teacherID,
-        correct: body.correct,
-        incorrect: body.incorrect,
-        totalOptions: body.totalOptions,
+        assessmenttId: assessmenttId,
+        teacherID: teacherID,
+        correct: correct,
+        incorrect: incorrect,
+        totalOptions: totalOptions,
         timeSpend: totalTime,
     };
     uploadData(details);
