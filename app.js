@@ -7,12 +7,7 @@ function end(startTime) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     console.log(URLParamsArr)
     var studentId = URLParamsArr.get('userID');
-    if(teacherID){
-        var teacherID = URLParamsArr.get('userID');
-    }
-    else{
-        var teacherID = "";
-    }
+    var teacherID = URLParamsArr.get('teacherID');
     // var assessmentID = URLParamsArr.get('ass')
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
