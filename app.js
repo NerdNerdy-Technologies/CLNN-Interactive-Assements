@@ -7,7 +7,9 @@ function end(startTime) {
 // function getParams(){
     // var query_string= window.location.search;
     var URLParamsArr = new URLSearchParams(window.location.search)
+    console.log(URLParamsArr)
     var studentId = URLParamsArr.get('userID');
+    console.log(studentId)
     // console.log("student ID is ",studentId)
     // var assessmenttId = URLParamsArr.get('userID');
     // var teacherID = URLParamsArr.get('userID');
