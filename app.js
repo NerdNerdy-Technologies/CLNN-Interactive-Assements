@@ -14,20 +14,6 @@ function end(startTime) {
     var incorrect = URLParamsArr.get('userID');
     var totalOptions = URLParamsArr.get('userID');
     var timeSpend = URLParamsArr.get('userID');
-    // return userID;
-
-    // {
-    //     "studentId": body.studentId,
-    //     "assessmenttId": body.assessmenttId,
-    //     "teacherID": body.teacherID,
-    //     "correct": body.correct,
-    //     "incorrect": body.incorrect,
-    //     "totalOptions": body.totalOptions,
-    //     "timeSpend": body.timeSpend,
-    // }
-//   }
-//   var params = getParams();
-//   document.getElementById("param").innerHTML = params;
     const end = new Date().getTime();
     const totalTime = (end - startTime) / 1000;
     const details = {
@@ -39,6 +25,7 @@ function end(startTime) {
         totalOptions: totalOptions,
         timeSpend: totalTime,
     };
+    console.log(details);
     uploadData(details);
 }
 async function uploadData(details) {
