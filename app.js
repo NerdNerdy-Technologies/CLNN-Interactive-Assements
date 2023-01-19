@@ -1,8 +1,8 @@
 
 function start() {
-return new Date().getTime();
+    return new Date().getTime();
 }
-function end(startTime,totalOptions) {
+function end(startTime, totalOptions) {
 
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
@@ -38,4 +38,4 @@ async function uploadData(details) {
         console.log(data);
     });
 }
-export  { start, end };
+export { start, end };
