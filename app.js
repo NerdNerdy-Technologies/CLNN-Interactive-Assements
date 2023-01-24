@@ -31,7 +31,7 @@ async function uploadData(details) {
             "assessmenttId": "nn-assesment-group-3=",
             "assementTime": details.timeSpend,
             "assesmentScore": "correct",
-            "assesmentMetadata": "",
+            "assesmentMetadata": ""
         })
     });
 
