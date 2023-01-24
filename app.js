@@ -28,18 +28,15 @@ async function uploadData(details) {
         body: JSON.stringify({
             "studentId": details.studentId,
             "teacherID": details.teacherID,
-            "assessmenttId": "nn-assesment-group-3=",
+            "assessmenttId": "nn-assesment-group-3=" + window.location.pathname,
             "assementTime": details.timeSpend,
-            "assesmentScore": "correct",
+            "assesmentScore": totalOptions,
             "assesmentMetadata": ""
         })
     });
 
     response.json().then(data => {
         console.log(data);
-        console.log('document.location', document.location.href);
-console.log('location.pathname',  window.location.pathname); // Returns path only
-console.log('location.href', window.location.href); // Returns full URL
     });
 }
 export { start, end };
