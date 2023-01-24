@@ -30,7 +30,7 @@ async function uploadData(details) {
             "teacherID": details.teacherID,
             "assessmenttId": "nn-assesment-group-3=" + window.location.pathname,
             "assementTime": details.timeSpend,
-            "assesmentScore": totalOptions,
+            "assesmentScore": details.totalOptions,
             "assesmentMetadata": ""
         })
     });
