@@ -7,11 +7,11 @@ function end(startTime, totalOptions) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
-    var test = new URLSearchParams(window.location.pathname)
+    // var test = new URLSearchParams(window.location.pathname)
     const end = new Date().getTime();
     const totalTime = (end - startTime);
     const details = {
-        test: test,
+        // test: test,
         studentId: studentId,
         teacherID: teacherID,
         totalOptions: totalOptions,
@@ -34,12 +34,15 @@ async function uploadData(details) {
             "assementTime": details.timeSpend,
             "assesmentScore": "correct",
             "assesmentMetadata": "",
-            "test": test
+            // "test": test
         })
     });
 
     response.json().then(data => {
         console.log(data);
+        console.log('document.location', document.location.href);
+console.log('location.pathname',  window.location.pathname); // Returns path only
+console.log('location.href', window.location.href); // Returns full URL
     });
 }
 export { start, end };
