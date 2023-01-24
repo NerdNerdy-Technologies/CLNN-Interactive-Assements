@@ -7,7 +7,7 @@ function end(startTime, totalOptions) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
-    var test = URLParamsArr.get();
+    var test = window.location.href;
     const end = new Date().getTime();
     const totalTime = (end - startTime);
     const details = {
