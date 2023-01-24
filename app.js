@@ -7,6 +7,8 @@ function end(startTime, totalOptions) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
+    var test = URLParamsArr.get();
+    console.log(test);
     const end = new Date().getTime();
     const totalTime = (end - startTime);
     const details = {
@@ -28,10 +30,9 @@ async function uploadData(details) {
         body: JSON.stringify({
             "studentId": details.studentId,
             "teacherID": details.teacherID,
-            "assessmenttId": details.studentId + Date.now(),
+            "assessmenttId": "nn-assesment-group-3=",
             "assementTime": details.timeSpend,
             "assesmentScore": "correct",
-            // "totalOptions": details.totalOptions,
             "assesmentMetadata": ""
         })
     });
