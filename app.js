@@ -34,7 +34,6 @@ async function uploadData(details) {
             "assementTime": details.timeSpend,
             "assesmentScore": "correct",
             "assesmentMetadata": "",
-            // "test": test
         })
     });
 
