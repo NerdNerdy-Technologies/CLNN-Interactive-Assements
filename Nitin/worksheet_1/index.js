@@ -113,7 +113,6 @@ function initStage(images) {
         width: 80,
       });
 
-
       animal.on('dragstart', function () {
         this.moveToTop();
       });
