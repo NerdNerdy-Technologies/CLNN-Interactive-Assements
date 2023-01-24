@@ -8,7 +8,7 @@ function end(startTime, totalOptions) {
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
     const end = new Date().getTime();
-    const totalTime = (end - startTime) / 1000;
+    const totalTime = (end - startTime);
     const details = {
         studentId: studentId,
         teacherID: teacherID,
@@ -17,8 +17,9 @@ function end(startTime, totalOptions) {
     };
     uploadData(details);
 }//"https://jsonplaceholder.typicode.com/posts", {
+    // https://cbqrznufal.execute-api.ap-south-1.amazonaws.com/default/CLNN-AssmentsHandler?queryType=addResult
 async function uploadData(details) {
-    const response = await fetch("https://cbqrznufal.execute-api.ap-south-1.amazonaws.com/default/CLNN-AssmentsHandler?queryType=addResult", {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -28,9 +29,10 @@ async function uploadData(details) {
             "studentId": details.studentId,
             "teacherID": details.teacherID,
             "assessmenttId": details.studentId + Date.now(),
-            "timeSpend": details.timeSpend,
-            "correct": "correct",
-            "totalOptions": details.totalOptions,
+            "assementTime": details.timeSpend,
+            "assesmentScore": "correct",
+            // "totalOptions": details.totalOptions,
+            "assesmentMetadata": ""
         })
     });
 
