@@ -7,6 +7,7 @@ function end(startTime, totalOptions) {
     var URLParamsArr = new URLSearchParams(window.location.search)
     var studentId = URLParamsArr.get('userID');
     var teacherID = URLParamsArr.get('teacherID');
+    console.log("hey")
     var test = URLParamsArr.get();
     console.log(test);
     const end = new Date().getTime();
