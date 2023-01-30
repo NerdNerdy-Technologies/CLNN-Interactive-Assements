@@ -19,7 +19,7 @@ function end(startTime, totalOptions) {
 }//"https://jsonplaceholder.typicode.com/posts", {
     // https://cbqrznufal.execute-api.ap-south-1.amazonaws.com/default/CLNN-AssmentsHandler?queryType=addResult
 async function uploadData(details) {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    const response = await fetch("https://cbqrznufal.execute-api.ap-south-1.amazonaws.com/default/CLNN-AssmentsHandler?queryType=addResult", {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
