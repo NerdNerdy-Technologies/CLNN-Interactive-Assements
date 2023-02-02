@@ -22,6 +22,7 @@ function loadImages(sources, callback) {
     images[src].src = assetDir + sources[src];
   }
 }
+// doSomething();
 function doSomething(){
   alert("button clicked");
 }
