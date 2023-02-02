@@ -22,10 +22,6 @@ function loadImages(sources, callback) {
     images[src].src = assetDir + sources[src];
   }
 }
-// doSomething();
-function doSomething(){
-  alert("button clicked");
-}
 function isNearOutline(animal, outline) {
   var a = animal;
   var o = outline;
