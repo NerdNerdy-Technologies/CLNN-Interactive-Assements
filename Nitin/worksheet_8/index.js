@@ -66,30 +66,30 @@ function initStage(images) {
   var animals = {
     fruit1: {
       x: 0,
-      y: 50,
+      y: 0,
     },
     fruit2: {
       x: 0,
-      y: 250,
+      y: 150,
     },
     fruit3: {
       x: 0,
-      y: 450,
+      y: 300,
     },
     fruit5: {
       x: 150,
-      y: 100,
+      y: 0,
     },
     fruit4: {
       x: 150,
-      y: 350,
+      y: 150,
     },
   };
 
   var outlines = {
     fruit_basket: {
       x: 250,
-      y: 300,
+      y: 100,
     },
   };
 

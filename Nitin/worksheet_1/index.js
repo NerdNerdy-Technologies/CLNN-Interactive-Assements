@@ -62,42 +62,42 @@ function initStage(images) {
   var animals = {
     one: {
       x: 10,
-      y: 50,
+      y: 5,
     },
     eight: {
       x: 10,
-      y: 200,
+      y: 130,
     },
     seventysix: {
       x: 10,
-      y: 350,
+      y: 260,
     },
     five: {
       x: 400,
-      y: 50,
+      y: 5,
     },
     nineteen: {
       x: 400,
-      y: 200,
+      y: 130,
     },
     ninetyfive: {
       x: 400,
-      y: 350,
+      y: 260,
     },
   };
 
   var outlines = {
     five_black: {
       x: 200,
-      y: 50,
+      y: 5,
     },
     nineteen_black: {
       x: 200,
-      y: 200,
+      y: 130,
     },
     ninetyfive_black: {
       x: 200,
-      y: 350,
+      y: 260,
     },
   };
   for (var key in animals) {

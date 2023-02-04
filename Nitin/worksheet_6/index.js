@@ -102,51 +102,51 @@ function initStage(images) {
   var outlines = {
     heart: {
       x: 10,
-      y: 50,
+      y: 0,
     },
     circle: {
       x: 200,
-      y: 50,
+      y: 0,
     },
     star: {
       x: 10,
-      y: 350,
+      y: 300,
     },
     triangle: {
       x: 200,
-      y: 350,
+      y: 300,
     },
     heart_black: {
       x: 10,
-      y: 160,
+      y: 110,
     },
     circle_black: {
       x: 200,
-      y: 160,
+      y: 110,
     },
     star_black: {
       x: 10,
-      y: 460,
+      y: 410,
     },
     triangle_black: {
       x: 200,
-      y: 460,
+      y: 410,
     },
     red_black: {
       x: 10,
-      y: 220,
+      y: 180,
     },
     blue_black: {
       x: 200,
-      y: 220,
+      y: 180,
     },
     yellow_black: {
       x: 10,
-      y: 520,
+      y: 480,
     },
     green_black: {
       x: 200,
-      y: 520,
+      y: 480,
     },
   };
 

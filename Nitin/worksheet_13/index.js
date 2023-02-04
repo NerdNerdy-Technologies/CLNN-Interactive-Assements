@@ -94,54 +94,54 @@ function initStage(images) {
   var outlines = {
     cherry: {
       x: 10,
-      y: 10,
+      y: 0,
     },
     dog: {
       x: 10,
-      y: 220,
+      y: 200,
     },
     bucket: {
       x: 10,
-      y: 430,
+      y: 400,
     },
     cherries: {
       x: 160,
-      y: 10,
+      y: 0,
     },
     dogs: {
       x: 160,
-      y: 220,
+      y: 200,
     },
     buckets: {
       x: 160,
-      y: 430,
+      y: 400,
     },
     cherry_black: {
       x: 160,
-      y: 120,
+      y: 100,
     },
     dog_black: {
       x: 160,
-      y: 320,
+      y: 300,
     },
     bucket_black: {
       x: 160,
-      y: 530,
+      y: 500,
     },
   };
 
   var headings = {
     cherryhead: {
       x: 40,
-      y: 180,
+      y: 150,
     },
     doghead: {
       x: 40,
-      y: 380,
+      y: 350,
     },
     buckethead: {
       x: 50,
-      y: 590,
+      y: 550,
     },
   };
 

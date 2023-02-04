@@ -77,15 +77,15 @@ function initStage(images) {
   var outlines = {
     morning: {
       x: 10,
-      y: 50,
+      y: 0,
     },
     noon: {
       x: 10,
-      y: 250,
+      y: 200,
     },
     night: {
       x: 10,
-      y: 450,
+      y: 400,
     },
     morning_black: {
       x: 200,

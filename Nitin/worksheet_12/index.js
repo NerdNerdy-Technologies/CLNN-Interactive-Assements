@@ -67,69 +67,69 @@ function initStage(images) {
   var animals = {
     crowtext: {
       x: 370,
-      y: 100,
+      y: 0,
     },
     nesttext: {
       x: 370,
-      y: 310,
+      y: 200,
     },
     groundtext: {
       x: 460,
-      y: 310,
+      y: 200,
     },
     flytext: {
       x: 460,
-      y: 555,
+      y: 400,
     },
     parrottext: {
       x: 460,
-      y: 100,
+      y: 0,
     },
     walktext: {
       x: 370,
-      y: 555,
+      y: 400,
     },
   };
 
   var outlines = {
     crow: {
       x: 10,
-      y: 10,
+      y: 0,
     },
     nest: {
       x: 10,
-      y: 250,
+      y: 200,
     },
     fly: {
       x: 10,
-      y: 480,
+      y: 400,
     },
     crow_black: {
       x: 200,
-      y: 40,
+      y: 0,
     },
     nest_black: {
       x: 200,
-      y: 250,
+      y: 200,
     },
     fly_black: {
       x: 200,
-      y: 500,
+      y: 400,
     },
   };
 
   var headings = {
     crowsent: {
       x: 10,
-      y: 180,
+      y: 150,
     },
     nestsent: {
       x: 10,
-      y: 420,
+      y: 350,
     },
     flysent: {
       x: 10,
-      y: 650,
+      y: 560,
     },
   };
 

@@ -94,35 +94,35 @@ function initStage(images) {
   var outlines = {
     walk: {
       x: 10,
-      y: 50,
+      y: 0,
     },
     dog: {
       x: 250,
-      y: 50,
+      y: 0,
     },
     moon: {
       x: 10,
-      y: 350,
+      y: 250,
     },
     fish: {
       x: 250,
-      y: 350,
+      y: 250,
     },
     walk_black: {
       x: 10,
-      y: 160,
+      y: 100,
     },
     dog_black: {
       x: 250,
-      y: 160,
+      y: 100,
     },
     moon_black: {
       x: 10,
-      y: 460,
+      y: 360,
     },
     fish_black: {
       x: 250,
-      y: 460,
+      y: 360,
     },
   };
 

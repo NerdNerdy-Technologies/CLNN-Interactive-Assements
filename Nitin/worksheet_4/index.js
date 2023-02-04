@@ -90,27 +90,27 @@ function initStage(images) {
   var outlines = {
     four: {
       x: 10,
-      y: 50,
+      y: 0,
     },
     six: {
       x: 10,
-      y: 250,
+      y: 200,
     },
     eight: {
       x: 10,
-      y: 450,
+      y: 400,
     },
     four_black: {
       x: 200,
-      y: 50,
+      y: 0,
     },
     six_black: {
       x: 200,
-      y: 250,
+      y: 200,
     },
     eight_black: {
       x: 200,
-      y: 450,
+      y: 400,
     },
   };
 
