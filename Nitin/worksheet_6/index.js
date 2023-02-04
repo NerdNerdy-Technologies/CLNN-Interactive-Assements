@@ -110,43 +110,43 @@ function initStage(images) {
     },
     star: {
       x: 10,
-      y: 300,
+      y: 260,
     },
     triangle: {
       x: 200,
-      y: 300,
+      y: 260,
     },
     heart_black: {
       x: 10,
-      y: 110,
+      y: 100,
     },
     circle_black: {
       x: 200,
-      y: 110,
+      y: 100,
     },
     star_black: {
       x: 10,
-      y: 410,
+      y: 370,
     },
     triangle_black: {
       x: 200,
-      y: 410,
+      y: 370,
     },
     red_black: {
       x: 10,
-      y: 180,
+      y: 150,
     },
     blue_black: {
       x: 200,
-      y: 180,
+      y: 150,
     },
     yellow_black: {
       x: 10,
-      y: 480,
+      y: 420,
     },
     green_black: {
       x: 200,
-      y: 480,
+      y: 420,
     },
   };
 

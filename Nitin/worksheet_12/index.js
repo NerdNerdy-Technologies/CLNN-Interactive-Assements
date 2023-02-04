@@ -98,11 +98,11 @@ function initStage(images) {
     },
     nest: {
       x: 10,
-      y: 200,
+      y: 180,
     },
     fly: {
       x: 10,
-      y: 400,
+      y: 350,
     },
     crow_black: {
       x: 200,
@@ -110,11 +110,11 @@ function initStage(images) {
     },
     nest_black: {
       x: 200,
-      y: 200,
+      y: 180,
     },
     fly_black: {
       x: 200,
-      y: 400,
+      y: 350,
     },
   };
 
@@ -125,11 +125,11 @@ function initStage(images) {
     },
     nestsent: {
       x: 10,
-      y: 350,
+      y: 330,
     },
     flysent: {
       x: 10,
-      y: 560,
+      y: 500,
     },
   };
 

@@ -98,11 +98,11 @@ function initStage(images) {
     },
     dog: {
       x: 10,
-      y: 200,
+      y: 180,
     },
     bucket: {
       x: 10,
-      y: 400,
+      y: 360,
     },
     cherries: {
       x: 160,
@@ -110,23 +110,23 @@ function initStage(images) {
     },
     dogs: {
       x: 160,
-      y: 200,
+      y: 180,
     },
     buckets: {
       x: 160,
-      y: 400,
+      y: 360,
     },
     cherry_black: {
       x: 160,
-      y: 100,
+      y: 80,
     },
     dog_black: {
       x: 160,
-      y: 300,
+      y: 270,
     },
     bucket_black: {
       x: 160,
-      y: 500,
+      y: 450,
     },
   };
 
@@ -137,11 +137,11 @@ function initStage(images) {
     },
     doghead: {
       x: 40,
-      y: 350,
+      y: 320,
     },
     buckethead: {
       x: 50,
-      y: 550,
+      y: 500,
     },
   };
 
