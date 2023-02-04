@@ -61,42 +61,42 @@ function initStage(images) {
   // image positions
   var animals = {
     morningtext: {
-      x: 700,
+      x: 400,
       y: 100,
     },
     noontext: {
-      x: 700,
+      x: 400,
       y: 150,
     },
     nighttext: {
-      x: 700,
+      x: 400,
       y: 200,
     },
   };
 
   var outlines = {
     morning: {
-      x: 300,
+      x: 10,
       y: 50,
     },
     noon: {
-      x: 300,
+      x: 10,
       y: 250,
     },
     night: {
-      x: 300,
+      x: 10,
       y: 450,
     },
     morning_black: {
-      x: 500,
+      x: 200,
       y: 50,
     },
     noon_black: {
-      x: 500,
+      x: 200,
       y: 250,
     },
     night_black: {
-      x: 500,
+      x: 200,
       y: 450,
     },
   };

@@ -66,27 +66,27 @@ function initStage(images) {
   // image positions
   var animals = {
     cherrytext: {
-      x: 600,
+      x: 350,
       y: 150,
     },
     buckettext: {
-      x: 600,
+      x: 350,
       y: 200,
     },
     dogtext: {
-      x: 600,
+      x: 350,
       y: 250,
     },
     text_1: {
-      x: 600,
+      x: 350,
       y: 300,
     },
     text_2: {
-      x: 600,
+      x: 350,
       y: 350,
     },
     text_3: {
-      x: 600,
+      x: 350,
       y: 400,
     },
   };
@@ -98,35 +98,35 @@ function initStage(images) {
     },
     dog: {
       x: 10,
-      y: 250,
+      y: 220,
     },
     bucket: {
       x: 10,
-      y: 480,
+      y: 430,
     },
     cherries: {
-      x: 300,
+      x: 160,
       y: 10,
     },
     dogs: {
-      x: 300,
-      y: 250,
+      x: 160,
+      y: 220,
     },
     buckets: {
-      x: 300,
-      y: 480,
+      x: 160,
+      y: 430,
     },
     cherry_black: {
-      x: 320,
+      x: 160,
       y: 120,
     },
     dog_black: {
-      x: 320,
-      y: 350,
+      x: 160,
+      y: 320,
     },
     bucket_black: {
-      x: 320,
-      y: 580,
+      x: 160,
+      y: 530,
     },
   };
 
@@ -137,11 +137,11 @@ function initStage(images) {
     },
     doghead: {
       x: 40,
-      y: 420,
+      y: 380,
     },
     buckethead: {
       x: 50,
-      y: 650,
+      y: 590,
     },
   };
 

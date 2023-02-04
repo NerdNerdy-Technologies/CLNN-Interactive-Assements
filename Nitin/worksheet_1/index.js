@@ -50,8 +50,8 @@ function drawBackground(background, beachImg, text) {
 function initStage(images) {
   var stage = new Konva.Stage({
     container: 'container',
-    width: 2000,
-    height: 800,
+    width: 500,
+    height: 500,
   });
   var background = new Konva.Layer();
   var animalLayer = new Konva.Layer();

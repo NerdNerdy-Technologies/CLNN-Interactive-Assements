@@ -66,55 +66,55 @@ function initStage(images) {
   // image positions
   var animals = {
     ontext: {
-      x: 900,
+      x: 400,
       y: 50,
     },
     besidetext: {
-      x: 900,
+      x: 400,
       y: 100,
     },
     undertext: {
-      x: 900,
+      x: 400,
       y: 150,
     },
     behindtext: {
-      x: 900,
+      x: 400,
       y: 200,
     },
   };
 
   var outlines = {
     on: {
-      x: 200,
+      x: 10,
       y: 50,
     },
     under: {
-      x: 550,
+      x: 200,
       y: 50,
     },
     behind: {
-      x: 200,
-      y: 350,
+      x: 10,
+      y: 250,
     },
     beside: {
-      x: 550,
-      y: 350,
+      x: 200,
+      y: 250,
     },
     on_black: {
-      x: 200,
-      y: 160,
+      x: 10,
+      y: 150,
     },
     under_black: {
-      x: 550,
-      y: 160,
+      x: 200,
+      y: 150,
     },
     behind_black: {
-      x: 200,
-      y: 460,
+      x: 10,
+      y: 350,
     },
     beside_black: {
-      x: 550,
-      y: 460,
+      x: 200,
+      y: 350,
     },
   };
 

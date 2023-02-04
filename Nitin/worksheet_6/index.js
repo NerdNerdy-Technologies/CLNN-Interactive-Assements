@@ -66,86 +66,86 @@ function initStage(images) {
   // image positions
   var animals = {
     hearttext: {
-      x: 50,
+      x: 400,
       y: 50,
     },
     circletext: {
-      x: 50,
+      x: 400,
       y: 100,
     },
     startext: {
-      x: 50,
+      x: 400,
       y: 150,
     },
     triangletext: {
-      x: 50,
+      x: 400,
       y: 200,
     },
     redtext: {
-      x: 850,
-      y: 50,
+      x: 400,
+      y: 250,
     },
     bluetext: {
-      x: 850,
-      y: 100,
+      x: 400,
+      y: 300,
     },
     greentext: {
-      x: 850,
-      y: 150,
+      x: 400,
+      y: 350,
     },
     yellowtext: {
-      x: 850,
-      y: 200,
+      x: 400,
+      y: 400,
     },
   };
 
   var outlines = {
     heart: {
-      x: 300,
+      x: 10,
       y: 50,
     },
     circle: {
-      x: 600,
+      x: 200,
       y: 50,
     },
     star: {
-      x: 300,
+      x: 10,
       y: 350,
     },
     triangle: {
-      x: 600,
+      x: 200,
       y: 350,
     },
     heart_black: {
-      x: 300,
+      x: 10,
       y: 160,
     },
     circle_black: {
-      x: 600,
+      x: 200,
       y: 160,
     },
     star_black: {
-      x: 300,
+      x: 10,
       y: 460,
     },
     triangle_black: {
-      x: 600,
+      x: 200,
       y: 460,
     },
     red_black: {
-      x: 300,
+      x: 10,
       y: 220,
     },
     blue_black: {
-      x: 600,
+      x: 200,
       y: 220,
     },
     yellow_black: {
-      x: 300,
+      x: 10,
       y: 520,
     },
     green_black: {
-      x: 600,
+      x: 200,
       y: 520,
     },
   };

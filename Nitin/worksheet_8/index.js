@@ -77,18 +77,18 @@ function initStage(images) {
       y: 450,
     },
     fruit5: {
-      x: 250,
+      x: 150,
       y: 100,
     },
     fruit4: {
-      x: 250,
+      x: 150,
       y: 350,
     },
   };
 
   var outlines = {
     fruit_basket: {
-      x: 550,
+      x: 250,
       y: 300,
     },
   };

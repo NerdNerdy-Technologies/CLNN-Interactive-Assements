@@ -66,54 +66,54 @@ function initStage(images) {
   // image positions
   var animals = {
     climbtext: {
-      x: 200,
+      x: 10,
       y: 400,
     },
     climbingtext: {
-      x: 200,
+      x: 10,
       y: 450,
     },
     crytext: {
-      x: 480,
+      x: 200,
       y: 400,
     },
     cryingtext: {
-      x: 480,
+      x: 200,
       y: 450,
     },
     playtext: {
-      x: 780,
+      x: 400,
       y: 400,
     },
     playingtext: {
-      x: 780,
+      x: 400,
       y: 450,
     },
   };
 
   var outlines = {
     climb: {
-      x: 200,
+      x: 10,
       y: 50,
     },
     cry: {
-      x: 450,
+      x: 200,
       y: 50,
     },
     play: {
-      x: 750,
+      x: 400,
       y: 50,
     },
     climb_black: {
-      x: 200,
+      x: 10,
       y: 250,
     },
     cry_black: {
-      x: 450,
+      x: 200,
       y: 250,
     },
     play_black: {
-      x: 750,
+      x: 400,
       y: 250,
     },
   };
