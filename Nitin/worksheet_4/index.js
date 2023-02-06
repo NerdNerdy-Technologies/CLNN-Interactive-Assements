@@ -94,11 +94,11 @@ function initStage(images) {
     },
     six: {
       x: 10,
-      y: 200,
+      y: 180,
     },
     eight: {
       x: 10,
-      y: 400,
+      y: 360,
     },
     four_black: {
       x: 200,
@@ -106,11 +106,11 @@ function initStage(images) {
     },
     six_black: {
       x: 200,
-      y: 200,
+      y: 170,
     },
     eight_black: {
       x: 200,
-      y: 400,
+      y: 360,
     },
   };
 
@@ -223,8 +223,8 @@ function initStage(images) {
 
 var sources = {
   beach: 'candy.png',
-  four: "four.jpg",
-  six: "six.jpg",
+  four: "four.png",
+  six: "six.png",
   eight: "eight.png",
   fourtext: "fourtext.png",
   eighttext: "eighttext.png",

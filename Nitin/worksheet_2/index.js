@@ -81,23 +81,23 @@ function initStage(images) {
     },
     noon: {
       x: 10,
-      y: 200,
+      y: 180,
     },
     night: {
       x: 10,
-      y: 400,
+      y: 370,
     },
     morning_black: {
       x: 200,
-      y: 50,
+      y: 0,
     },
     noon_black: {
       x: 200,
-      y: 250,
+      y: 170,
     },
     night_black: {
       x: 200,
-      y: 450,
+      y: 360,
     },
   };
 
@@ -207,8 +207,8 @@ function initStage(images) {
 
 var sources = {
   beach: 'candy.png',
-  morning: "morning.jpeg",
-  noon: "noon.jpg",
+  morning: "morning.png",
+  noon: "noon.png",
   night: "night.jpg",
   morningtext: "morningtext.png",
   noontext: "noontext.png",

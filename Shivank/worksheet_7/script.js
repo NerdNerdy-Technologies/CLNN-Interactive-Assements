@@ -64,54 +64,54 @@ function initStage(images) {
 
   let animals = {
     one_3_black: {
-      x: 300,
+      x: 0,
       y: 470,
     },
     two_1_black: {
-      x: 300,
+      x: 0,
       y: 470,
     },
     one_2_black: {
-      x: 600,
+      x: 200,
       y: 470,
     },
     two_2_black: {
-      x: 600,
+      x: 200,
       y: 470,
     },
     one_1_black: {
-      x: 900,
+      x: 400,
       y: 470,
     },
     two_3_black: {
-      x: 900,
+      x: 400,
       y: 470,
     },
   };
 
   let outlines = {
     one_1: {
-      x: 300,
+      x: 0,
       y: 30,
     },
     one_2: {
-      x: 600,
+      x: 200,
       y: 30,
     },
     one_3: {
-      x: 900,
+      x: 400,
       y: 30,
     },
     two_1: {
-      x: 300,
+      x: 0,
       y: 250,
     },
     two_2: {
-      x: 600,
+      x: 200,
       y: 250,
     },
     two_3: {
-      x: 900,
+      x: 400,
       y: 250,
     },
   };
