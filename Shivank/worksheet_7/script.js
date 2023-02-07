@@ -92,27 +92,27 @@ function initStage(images) {
   let outlines = {
     one_1: {
       x: 0,
-      y: 30,
+      y: 0,
     },
     one_2: {
       x: 200,
-      y: 30,
+      y: 0,
     },
     one_3: {
       x: 400,
-      y: 30,
+      y: 0,
     },
     two_1: {
       x: 0,
-      y: 250,
+      y: 210,
     },
     two_2: {
       x: 200,
-      y: 250,
+      y: 210,
     },
     two_3: {
       x: 400,
-      y: 250,
+      y: 210,
     },
   };
 
